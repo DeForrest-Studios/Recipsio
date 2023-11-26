@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recipsio", "Recipsio.csproj", "{2CEC0EDE-00AA-4E9C-BDF0-780074E95204}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RecipsioInstaller", "RecipsioInstaller\RecipsioInstaller.vdproj", "{B6C1AAEE-A51D-42B9-A632-2F558FBFDEFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CEC0EDE-00AA-4E9C-BDF0-780074E95204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CEC0EDE-00AA-4E9C-BDF0-780074E95204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CEC0EDE-00AA-4E9C-BDF0-780074E95204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CEC0EDE-00AA-4E9C-BDF0-780074E95204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6C1AAEE-A51D-42B9-A632-2F558FBFDEFD}.Debug|Any CPU.ActiveCfg = Debug
+		{B6C1AAEE-A51D-42B9-A632-2F558FBFDEFD}.Debug|Any CPU.Build.0 = Debug
+		{B6C1AAEE-A51D-42B9-A632-2F558FBFDEFD}.Release|Any CPU.ActiveCfg = Release
+		{B6C1AAEE-A51D-42B9-A632-2F558FBFDEFD}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B205114-5DDE-4677-8FA5-775AD9B894FD}
+	EndGlobalSection
+EndGlobal
