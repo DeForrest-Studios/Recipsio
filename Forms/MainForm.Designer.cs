@@ -39,6 +39,7 @@
             imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             tagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            ingredientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             Help = new System.Windows.Forms.ToolStripMenuItem();
             ContentGroupBox = new System.Windows.Forms.GroupBox();
@@ -101,7 +102,7 @@
             // 
             // Options
             // 
-            Options.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { CreateNew, Save, Delete, toolStripSeparator2, imageToolStripMenuItem, tagsToolStripMenuItem, toolStripSeparator1, settingsToolStripMenuItem, Help });
+            Options.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { CreateNew, Save, Delete, toolStripSeparator2, imageToolStripMenuItem, tagsToolStripMenuItem, toolStripSeparator1, ingredientsToolStripMenuItem, settingsToolStripMenuItem, Help });
             Options.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Options.Name = "Options";
             Options.Size = new System.Drawing.Size(56, 22);
@@ -110,58 +111,68 @@
             // CreateNew
             // 
             CreateNew.Name = "CreateNew";
-            CreateNew.Size = new System.Drawing.Size(132, 22);
+            CreateNew.Size = new System.Drawing.Size(180, 22);
             CreateNew.Text = "Create New";
             CreateNew.Click += CreateNew_Click;
             // 
             // Save
             // 
             Save.Name = "Save";
-            Save.Size = new System.Drawing.Size(132, 22);
+            Save.Size = new System.Drawing.Size(180, 22);
             Save.Text = "Save";
             Save.Click += Save_Click;
             // 
             // Delete
             // 
             Delete.Name = "Delete";
-            Delete.Size = new System.Drawing.Size(132, 22);
+            Delete.Size = new System.Drawing.Size(180, 22);
             Delete.Text = "Delete";
             Delete.Click += Delete_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new System.Drawing.Size(129, 6);
+            toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // imageToolStripMenuItem
             // 
             imageToolStripMenuItem.Name = "imageToolStripMenuItem";
-            imageToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            imageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             imageToolStripMenuItem.Text = "Images";
+            imageToolStripMenuItem.Click += Options_Click;
             // 
             // tagsToolStripMenuItem
             // 
             tagsToolStripMenuItem.Name = "tagsToolStripMenuItem";
-            tagsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            tagsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             tagsToolStripMenuItem.Text = "Tags";
+            tagsToolStripMenuItem.Click += Options_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // ingredientsToolStripMenuItem
+            // 
+            ingredientsToolStripMenuItem.Name = "ingredientsToolStripMenuItem";
+            ingredientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            ingredientsToolStripMenuItem.Text = "Ingredients";
+            ingredientsToolStripMenuItem.Click += Options_Click;
             // 
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += Options_Click;
             // 
             // Help
             // 
             Help.Name = "Help";
-            Help.Size = new System.Drawing.Size(132, 22);
+            Help.Size = new System.Drawing.Size(180, 22);
             Help.Text = "Help";
-            Help.Click += Help_Click;
+            Help.Click += Options_Click;
             // 
             // ContentGroupBox
             // 
@@ -404,13 +415,13 @@
             Search.TabIndex = 19;
             Search.Text = "";
             // 
-            // RecipeManager
+            // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(252, 245, 229);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            ClientSize = new System.Drawing.Size(884, 800);
+            ClientSize = new System.Drawing.Size(884, 811);
             Controls.Add(Search);
             Controls.Add(CookTimeGroup);
             Controls.Add(PrepTimeGroup);
@@ -425,7 +436,7 @@
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             MinimumSize = new System.Drawing.Size(700, 400);
-            Name = "RecipeManager";
+            Name = "MainForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Recipe Toolbox";
             KeyDown += RecipeManager_KeyDown;
@@ -480,6 +491,7 @@
         public System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         public System.Windows.Forms.RichTextBox RecipeAuthor;
         public System.Windows.Forms.RichTextBox RecipeName;
+        private System.Windows.Forms.ToolStripMenuItem ingredientsToolStripMenuItem;
     }
 }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Recipsio.Forms;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -38,13 +40,13 @@ namespace RecipeManager
         }
         private void Delete_Click(object Sender, EventArgs E)
         {
+            if (CurrentRecipe == null) { return; }
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
             Manager.Delete_Recipe(CurrentRecipe);
             Manager.Clear_Content_Boxes();
             RecipeList.Items.Remove(CurrentRecipe);
             RecipeList.SelectedItem = null;
         }
-        private void Help_Click(object Sender, EventArgs E) {}
         private void Time_MouseClick(object Sender, MouseEventArgs MouseEvent)
         {
             Label Label = (Label)Sender;
@@ -134,6 +136,23 @@ namespace RecipeManager
         {
             TextBox Control = (TextBox)Sender;
             Controls.Remove(Control);
+        }
+
+        private void Options_Click(object Sender, EventArgs E)
+        {
+            Dictionary<string, Type> FormMap = new Dictionary<string, Type>()
+            {
+                { "Images", typeof(ImagesForm) },
+                { "Tags", typeof(TagsForm) },
+                { "Ingredients", typeof(IngredientsForm) },
+                { "Settings", typeof(SettingsForm) },
+                { "Help", typeof(HelpForm) },
+            };
+
+            ToolStripItem ItemClicked = (ToolStripItem)Sender;
+            _ = FormMap.TryGetValue(ItemClicked.Text, out Type? FormType);
+            Form NewForm = (Form)Activator.CreateInstance(FormType!, this)!;
+            NewForm.ShowDialog();
         }
     }
     public partial class Toolbox

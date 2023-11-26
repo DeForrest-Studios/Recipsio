@@ -4,7 +4,22 @@
     <_LastSelectedProfileId>C:\Users\rldre\Documents\GitHub\RecipeManager\Properties\PublishProfiles\PublishLocal.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="MainForm.cs">
+    <Compile Update="Forms\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ImagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\IngredientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\TagsForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
