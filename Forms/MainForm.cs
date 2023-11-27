@@ -1,10 +1,9 @@
-﻿using Recipsio.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace RecipeManager
+namespace Recipsio
 {
     public partial class MainForm : Form
     {
@@ -140,7 +139,7 @@ namespace RecipeManager
 
         private void Options_Click(object Sender, EventArgs E)
         {
-            Dictionary<string, Type> FormMap = new Dictionary<string, Type>()
+            Dictionary<string, Type> FormMap = new()
             {
                 { "Images", typeof(ImagesForm) },
                 { "Tags", typeof(TagsForm) },

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace RecipeManager
+namespace Recipsio
 {
    public partial class Toolbox
     {

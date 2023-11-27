@@ -1,8 +1,7 @@
-﻿using RecipeManager;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace Recipsio.Forms
+namespace Recipsio
 {
     public partial class IngredientsForm : Form
     {

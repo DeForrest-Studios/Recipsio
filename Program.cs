@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace RecipeManager
+namespace Recipsio
 {
     internal static class Program
     {
@@ -13,7 +13,7 @@ namespace RecipeManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new TestingForm());
         }
     }
 }

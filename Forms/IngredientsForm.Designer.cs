@@ -1,4 +1,4 @@
-﻿namespace Recipsio.Forms
+﻿namespace Recipsio
 {
     partial class IngredientsForm
     {

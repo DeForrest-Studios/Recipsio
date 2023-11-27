@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Recipsio
 {
-    public partial class HelpForm : Form
+    public partial class TestingForm : Form
     {
-        public HelpForm()
+        public TestingForm()
         {
             InitializeComponent();
             KeyPreview = true;
