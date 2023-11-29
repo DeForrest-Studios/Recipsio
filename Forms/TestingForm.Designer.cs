@@ -29,7 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestingForm));
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
             SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            menuStrip1.Location = new System.Drawing.Point(112, 240);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new System.Drawing.Size(128, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
             // 
             // TestingForm
             // 
@@ -38,15 +49,20 @@
             BackColor = System.Drawing.Color.FromArgb(252, 245, 229);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             ClientSize = new System.Drawing.Size(1108, 696);
+            Controls.Add(menuStrip1);
             Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
             Name = "TestingForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Untitled";
             KeyDown += Form_KeyDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }

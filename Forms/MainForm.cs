@@ -184,6 +184,11 @@ namespace Recipsio
                 Search.Text = "";
             }
         }
+
+        private void Search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     public partial class Toolbox
     {
