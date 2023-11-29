@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace Recipsio
         public MainForm()
         {
             InitializeComponent();
+            TotalTime.Text = "";
             Manager = new Toolbox(this);
             Manager.Generate_User_Directories();
             Manager.Load_Files(ref RecipeList);
@@ -53,20 +55,34 @@ namespace Recipsio
             if (MouseEvent.Button == MouseButtons.Left)
             {
                 GroupBox LabelGroupBox = (GroupBox)Label.Parent;
-                TextBox Input = new();
+                RichTextBox Input = new();
 
                 Input.KeyDown += new KeyEventHandler(Input_Time_KeyDown);
 
-                Point InputLocation = new(LabelGroupBox.Location.X + Label.Left, LabelGroupBox.Location.Y + Label.Bottom);
+                int InputX = RecipeHeaderLayout.Location.X + LabelGroupBox.Location.X + Label.Left + 16;
+                int InputY = RecipeHeaderLayout.Location.Y + LabelGroupBox.Bottom + 5;
+
+                Point InputLocation = new(InputX, InputY);
 
                 Input.Location = InputLocation;
-                Input.Size = new(30, 50);
+                Input.Multiline = false;
+                Input.Size = new(30, 20);
                 Input.Tag = Label.Name;
+                Input.Leave += Time_Leave!;
 
                 Controls.Add(Input);
 
                 Input.Focus();
                 Input.BringToFront();
+            }
+        }
+        private void Control_MouseClick(object Sender, MouseEventArgs MouseEvent)
+        {
+            if (ActiveControl is RichTextBox)
+            {
+                RichTextBox RTC = (RichTextBox)ActiveControl;
+                ActiveControl = RecipeList;
+                RecipeList.Focus();
             }
         }
         private void RecipeList_SelectedValueChanged(object Sender, EventArgs Event)
@@ -133,7 +149,7 @@ namespace Recipsio
         }
         private void Time_Leave(object Sender, EventArgs E)
         {
-            TextBox Control = (TextBox)Sender;
+            RichTextBox Control = (RichTextBox)Sender;
             Controls.Remove(Control);
         }
 
@@ -150,8 +166,23 @@ namespace Recipsio
 
             ToolStripItem ItemClicked = (ToolStripItem)Sender;
             _ = FormMap.TryGetValue(ItemClicked.Text, out Type? FormType);
-            Form NewForm = (Form)Activator.CreateInstance(FormType!, this)!;
+            Form NewForm = (Form)Activator.CreateInstance(FormType!)!;
             NewForm.ShowDialog();
+        }
+        public void Search_Leave(object sender, EventArgs e)
+        {
+            if (Search.Text == "")
+            {
+                Search.Text = "Search...";
+            }
+        }
+
+        public void Search_Enter(object sender, EventArgs e)
+        {
+            if (Search.Text == "Search...")
+            {
+                Search.Text = "";
+            }
         }
     }
     public partial class Toolbox
