@@ -17,8 +17,6 @@ namespace Recipsio
             Manager = new Toolbox(this);
             Manager.Generate_User_Directories();
             Manager.Load_Files(ref RecipeList);
-            RecipeIngredients.SelectionBullet = true;
-            RecipeDirections.SelectionBullet = true;
             KeyPreview = true;
         }
 
@@ -113,7 +111,6 @@ namespace Recipsio
                     FoundControl!.Text += Lines[Index] + "\n";
                 }
             }
-            RecipeIngredients.Text = RecipeIngredients.Text[0..(RecipeIngredients.Text.Length - 1)];
         }
         private void RichText_KeyDown(object Sender, KeyEventArgs KeyEvent)
         {
