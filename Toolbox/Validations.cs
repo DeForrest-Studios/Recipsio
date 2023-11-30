@@ -1,34 +1,63 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Identity.Client;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Recipsio
 {
     public partial class Toolbox
     {
+        public List<dynamic> RecipeFields = new();
         public bool Is_Valid_Recipe()
         {
+            RecipeFields = new List<dynamic>
+            {
+                MF.RecipeName,
+                MF.RecipeAuthor,
+                MF.PrepTime,
+                MF.CookTime,
+                MF.RecipeDescription,
+                MF.RecipeIngredients,
+                MF.RecipeDirections,
+            };
+
             List<string> EmptyFieldTags = new();
 
-            foreach (Control RecipeManagerControl in MF.Controls)
+            foreach (dynamic Control in RecipeFields)
             {
-                if (RecipeManagerControl is GroupBox GroupBox)
+                if (Control is RichTextBox RTC)
                 {
-                    foreach (Control GroupBoxControl in GroupBox.Controls)
+                    if (RTC.Text == "")
                     {
-                        if (GroupBoxControl is RichTextBox GroupBoxRichTextBox)
+                        EmptyFieldTags.Add(RTC.Tag.ToString()!);
+                    }
+                }
+                if (Control is GroupBox GB)
+                {
+                    int Sum = 0;
+                    foreach (Control C in GB.Controls)
+                    {
+                        if (C.Text.Split(" ")[0] != "0")
                         {
-                            if (GroupBoxRichTextBox.Text == "")
-                            {
-                                EmptyFieldTags.Add(GroupBoxRichTextBox.Tag.ToString()!);
-                            }
+                            Sum++;
                         }
+                    }
+                    if (Sum == 0)
+                    {
+                        EmptyFieldTags.Add(GB.Tag.ToString()!);
+                    }
+                }
+                if (Control is ListBox LB)
+                {
+                    if (LB.Controls.Count == 0)
+                    {
+                        EmptyFieldTags.Add(LB.Tag.ToString()!);
                     }
                 }
             }
 
             if (EmptyFieldTags.Count != 0)
             {
-                Send_Message_Box(string.Join(", ", EmptyFieldTags) + " are required fields", "Found Empty Fields");
+                Send_Message_Box(string.Join(", ", EmptyFieldTags) + " seem to be unfulfilled.", "Found Unfulfilled Fields");
                 return false;
             }
 

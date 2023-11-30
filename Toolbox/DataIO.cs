@@ -34,18 +34,16 @@ namespace Recipsio
 
             return File.ReadAllLines(RecipeFile);
         }
-        //public static string Build_File_Formatted_String(MainForm RM)
-        //{
-        //    string NameString = $":RecipeName\n{RM.RecipeName.Text}";
+        public static string Build_File_Formatted_String(MainForm RM)
+        {
+            string NameString = $":Name\n{RM.RecipeName.Text}";
 
-        //    string DescriptionString = $":RecipeDescription\n{RM.RecipeDescription.Text}";
+            string AuthorString = $":Author\n{RM.RecipeAuthor.Text}";
 
-        //    string FormattedIngredients = ":RecipeIngredients\n" + string.Join("~", RM.RecipeIngredients.Text);
+            string DescriptionString = $":Description\n{RM.RecipeDescription.Text}";
 
-        //    string FormattedDirections = ":RecipeDirections\n" + string.Join("~", RM.RecipeDirections.Text);
-
-        //    return $"{NameString}\n{DescriptionString}\n{FormattedIngredients}\n{FormattedDirections}";
-        //}
+            return $"{NameString}\n{AuthorString}\n{DescriptionString}";
+        }
 
         public string Save_Recipe(string RecipeName, MainForm RM)
         {
@@ -57,14 +55,14 @@ namespace Recipsio
                 if (Result == DialogResult.Yes)
                 {
                     RecipeFile = $"{RecipsioRecipesFolder}\\{RM.CurrentRecipe!.Replace(" ", "-")}.recipe";
-                    //File.WriteAllText(RecipeFile!, Build_File_Formatted_String(RM));
+                    File.WriteAllText(RecipeFile!, Build_File_Formatted_String(RM));
                     return "Old";
                 }
             }
             else
             {
                 RecipeFile = $"{RecipsioRecipesFolder}\\{RecipeName.Replace(" ", "-")}.recipe";
-                //File.WriteAllText(RecipeFile, Build_File_Formatted_String(RM));
+                File.WriteAllText(RecipeFile, Build_File_Formatted_String(RM));
                 return "New";
             }
             return "Failure";

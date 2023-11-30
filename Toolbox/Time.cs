@@ -25,10 +25,10 @@ namespace Recipsio
         }
         public void Update_Times()
         {
-            TimeSpan PrepTimeSpan = Update_TimeSpan(MF.PrepTimeGroup);
-            TimeSpan CookTimeSpan = Update_TimeSpan(MF.CookTimeGroup);
+            TimeSpan PrepTimeSpan = Update_TimeSpan(MF.PrepTime);
+            TimeSpan CookTimeSpan = Update_TimeSpan(MF.CookTime);
             TimeSpan TotalTimeSpan = PrepTimeSpan + CookTimeSpan;
-            MF.TotalTime.Text = Format_Total_Time(TotalTimeSpan);
+            MF.TotalTimeValue.Text = Format_Total_Time(TotalTimeSpan);
         }
         public string Format_Total_Time(TimeSpan TotalTimeSpan)
         {

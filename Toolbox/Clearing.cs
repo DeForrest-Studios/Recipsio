@@ -15,9 +15,9 @@ namespace Recipsio
         public void Clear_Content_Boxes()
         {
             MF.RecipeName.Text = "";
-            Clear_Times(MF.PrepTimeGroup);
-            Clear_Times(MF.CookTimeGroup);
-            MF.TotalTime.Text = "0 Days 0 Hours 0 Minutes";
+            Clear_Times(MF.PrepTime);
+            Clear_Times(MF.CookTime);
+            MF.TotalTimeValue.Text = "0 Days 0 Hours 0 Minutes";
             MF.RecipeDescription.Text = "";
         }
     }

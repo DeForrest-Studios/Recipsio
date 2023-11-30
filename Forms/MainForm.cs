@@ -165,7 +165,7 @@ namespace Recipsio
             Form NewForm = (Form)Activator.CreateInstance(FormType!)!;
             NewForm.ShowDialog();
         }
-        public void Search_Leave(object sender, EventArgs e)
+        private void Search_Leave(object sender, EventArgs e)
         {
             if (Search.Text == "")
             {
@@ -173,7 +173,7 @@ namespace Recipsio
             }
         }
 
-        public void Search_Enter(object sender, EventArgs e)
+        private void Search_Enter(object sender, EventArgs e)
         {
             if (Search.Text == "Search...")
             {
@@ -185,10 +185,16 @@ namespace Recipsio
         {
 
         }
+        private void AddIngredient_Click(object Sender, EventArgs E)
+        {
+            AddIngredientForm AIF = new();
+            AIF.ShowDialog(this);
+        }
     }
     public partial class Toolbox
     {
         public MainForm MF;
         public Toolbox(MainForm MFPassed) => MF = MFPassed;
+
     }
 }
