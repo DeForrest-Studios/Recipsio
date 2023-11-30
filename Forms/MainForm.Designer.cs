@@ -283,12 +283,12 @@
             // 
             TotalTime.AutoSize = true;
             TotalTime.Dock = System.Windows.Forms.DockStyle.Right;
-            TotalTime.Location = new System.Drawing.Point(216, 17);
+            TotalTime.Location = new System.Drawing.Point(147, 17);
             TotalTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             TotalTime.Name = "TotalTime";
-            TotalTime.Size = new System.Drawing.Size(82, 15);
+            TotalTime.Size = new System.Drawing.Size(151, 15);
             TotalTime.TabIndex = 1;
-            TotalTime.Text = "TotalTimeText";
+            TotalTime.Text = "0 Days 0 Hours 0  Minutes";
             // 
             // NameGroupBox
             // 

@@ -14,7 +14,6 @@ namespace Recipsio
         public MainForm()
         {
             InitializeComponent();
-            TotalTime.Text = "";
             Manager = new Toolbox(this);
             Manager.Generate_User_Directories();
             Manager.Load_Files(ref RecipeList);
@@ -134,12 +133,12 @@ namespace Recipsio
         }
         private void Input_Time_KeyDown(object? Sender, KeyEventArgs KeyEvent)
         {
-            TextBox Input;
+            RichTextBox Input;
             Label InputTimeLabel;
             if (KeyEvent.KeyCode == Keys.Enter)
             {
                 KeyEvent.SuppressKeyPress = true;
-                Input = (TextBox)Sender!;
+                Input = (RichTextBox)Sender!;
                 InputTimeLabel = (Label)Controls.Find(Input.Tag.ToString(), true)[0];
                 InputTimeLabel.Text = $"{Input.Text} {InputTimeLabel.Tag}";
                 Manager.Update_Times();
