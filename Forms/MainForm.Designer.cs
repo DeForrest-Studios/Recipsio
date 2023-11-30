@@ -48,33 +48,33 @@
             RecipeInformationLayout = new System.Windows.Forms.TableLayoutPanel();
             DescriptionLabel = new System.Windows.Forms.Label();
             RecipeDescription = new System.Windows.Forms.RichTextBox();
-            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            IngredientControlsLayout = new System.Windows.Forms.TableLayoutPanel();
             IngredientsLabel = new System.Windows.Forms.Label();
-            button1 = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
+            AddIngredient = new System.Windows.Forms.Button();
+            RemoveIngredient = new System.Windows.Forms.Button();
             RecipeIngredients = new System.Windows.Forms.ListBox();
             RecipeDirections = new System.Windows.Forms.ListBox();
-            tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            DirectionsControlsLayout = new System.Windows.Forms.TableLayoutPanel();
             DirectionsLabel = new System.Windows.Forms.Label();
-            button3 = new System.Windows.Forms.Button();
-            button4 = new System.Windows.Forms.Button();
-            toolStrip1 = new System.Windows.Forms.ToolStrip();
-            Toolstrip = new System.Windows.Forms.ToolStripDropDownButton();
-            newRecipeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            saveRecipeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            deleteRecipeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            ingredientsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            tagsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            toolStripButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            tagsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            imagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            exportShoppingListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            pictureBox1 = new System.Windows.Forms.PictureBox();
+            AddDirection = new System.Windows.Forms.Button();
+            RemoveDirection = new System.Windows.Forms.Button();
+            MainToolStrip = new System.Windows.Forms.ToolStrip();
+            ApplicationActions = new System.Windows.Forms.ToolStripDropDownButton();
+            NewRecipeAction = new System.Windows.Forms.ToolStripMenuItem();
+            SaveRecipeAction = new System.Windows.Forms.ToolStripMenuItem();
+            DeleteRecipeAction = new System.Windows.Forms.ToolStripMenuItem();
+            Separator4 = new System.Windows.Forms.ToolStripSeparator();
+            ApplicationIngredientsAction = new System.Windows.Forms.ToolStripMenuItem();
+            ApplicationTagsAction = new System.Windows.Forms.ToolStripMenuItem();
+            Separator5 = new System.Windows.Forms.ToolStripSeparator();
+            SettingsAction = new System.Windows.Forms.ToolStripMenuItem();
+            HelpAction = new System.Windows.Forms.ToolStripMenuItem();
+            Separator3 = new System.Windows.Forms.ToolStripSeparator();
+            RecipeActions = new System.Windows.Forms.ToolStripDropDownButton();
+            RecipeTagsAction = new System.Windows.Forms.ToolStripMenuItem();
+            RecipeImagesAction = new System.Windows.Forms.ToolStripMenuItem();
+            ExportShoppingListAction = new System.Windows.Forms.ToolStripMenuItem();
+            RecipeIcon = new System.Windows.Forms.PictureBox();
             RecipeListLayout = new System.Windows.Forms.TableLayoutPanel();
             RecipeList = new System.Windows.Forms.ListBox();
             Search = new System.Windows.Forms.RichTextBox();
@@ -96,10 +96,10 @@
             NameGroupBox.SuspendLayout();
             PrepTimeGroup.SuspendLayout();
             RecipeInformationLayout.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            IngredientControlsLayout.SuspendLayout();
+            DirectionsControlsLayout.SuspendLayout();
+            MainToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)RecipeIcon).BeginInit();
             RecipeListLayout.SuspendLayout();
             SuspendLayout();
             // 
@@ -111,8 +111,8 @@
             FormLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             FormLayout.Controls.Add(RecipeHeaderLayout, 1, 0);
             FormLayout.Controls.Add(RecipeInformationLayout, 1, 3);
-            FormLayout.Controls.Add(toolStrip1, 0, 0);
-            FormLayout.Controls.Add(pictureBox1, 2, 0);
+            FormLayout.Controls.Add(MainToolStrip, 0, 0);
+            FormLayout.Controls.Add(RecipeIcon, 2, 0);
             FormLayout.Controls.Add(RecipeListLayout, 0, 1);
             FormLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             FormLayout.Location = new System.Drawing.Point(0, 0);
@@ -346,10 +346,10 @@
             RecipeInformationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             RecipeInformationLayout.Controls.Add(DescriptionLabel, 0, 0);
             RecipeInformationLayout.Controls.Add(RecipeDescription, 1, 0);
-            RecipeInformationLayout.Controls.Add(tableLayoutPanel1, 0, 1);
+            RecipeInformationLayout.Controls.Add(IngredientControlsLayout, 0, 1);
             RecipeInformationLayout.Controls.Add(RecipeIngredients, 1, 1);
             RecipeInformationLayout.Controls.Add(RecipeDirections, 1, 2);
-            RecipeInformationLayout.Controls.Add(tableLayoutPanel2, 0, 2);
+            RecipeInformationLayout.Controls.Add(DirectionsControlsLayout, 0, 2);
             RecipeInformationLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             RecipeInformationLayout.Location = new System.Drawing.Point(191, 131);
             RecipeInformationLayout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -385,22 +385,22 @@
             RecipeDescription.Tag = "Description";
             RecipeDescription.Text = "";
             // 
-            // tableLayoutPanel1
+            // IngredientControlsLayout
             // 
-            tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(IngredientsLabel, 0, 0);
-            tableLayoutPanel1.Controls.Add(button1, 0, 1);
-            tableLayoutPanel1.Controls.Add(button2, 0, 2);
-            tableLayoutPanel1.Location = new System.Drawing.Point(0, 191);
-            tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new System.Drawing.Size(95, 87);
-            tableLayoutPanel1.TabIndex = 22;
+            IngredientControlsLayout.ColumnCount = 1;
+            IngredientControlsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            IngredientControlsLayout.Controls.Add(IngredientsLabel, 0, 0);
+            IngredientControlsLayout.Controls.Add(AddIngredient, 0, 1);
+            IngredientControlsLayout.Controls.Add(RemoveIngredient, 0, 2);
+            IngredientControlsLayout.Location = new System.Drawing.Point(0, 191);
+            IngredientControlsLayout.Margin = new System.Windows.Forms.Padding(0);
+            IngredientControlsLayout.Name = "IngredientControlsLayout";
+            IngredientControlsLayout.RowCount = 3;
+            IngredientControlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            IngredientControlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            IngredientControlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            IngredientControlsLayout.Size = new System.Drawing.Size(95, 87);
+            IngredientControlsLayout.TabIndex = 22;
             // 
             // IngredientsLabel
             // 
@@ -413,25 +413,25 @@
             IngredientsLabel.TabIndex = 19;
             IngredientsLabel.Text = "&Ingredients";
             // 
-            // button1
+            // AddIngredient
             // 
-            button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            button1.Location = new System.Drawing.Point(3, 32);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(89, 23);
-            button1.TabIndex = 20;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
+            AddIngredient.Dock = System.Windows.Forms.DockStyle.Fill;
+            AddIngredient.Location = new System.Drawing.Point(3, 32);
+            AddIngredient.Name = "AddIngredient";
+            AddIngredient.Size = new System.Drawing.Size(89, 23);
+            AddIngredient.TabIndex = 20;
+            AddIngredient.Text = "Add";
+            AddIngredient.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // RemoveIngredient
             // 
-            button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            button2.Location = new System.Drawing.Point(3, 61);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(89, 23);
-            button2.TabIndex = 21;
-            button2.Text = "Remove";
-            button2.UseVisualStyleBackColor = true;
+            RemoveIngredient.Dock = System.Windows.Forms.DockStyle.Fill;
+            RemoveIngredient.Location = new System.Drawing.Point(3, 61);
+            RemoveIngredient.Name = "RemoveIngredient";
+            RemoveIngredient.Size = new System.Drawing.Size(89, 23);
+            RemoveIngredient.TabIndex = 21;
+            RemoveIngredient.Text = "Remove";
+            RemoveIngredient.UseVisualStyleBackColor = true;
             // 
             // RecipeIngredients
             // 
@@ -453,21 +453,21 @@
             RecipeDirections.Size = new System.Drawing.Size(895, 186);
             RecipeDirections.TabIndex = 24;
             // 
-            // tableLayoutPanel2
+            // DirectionsControlsLayout
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(DirectionsLabel, 0, 0);
-            tableLayoutPanel2.Controls.Add(button3, 0, 1);
-            tableLayoutPanel2.Controls.Add(button4, 0, 2);
-            tableLayoutPanel2.Location = new System.Drawing.Point(3, 385);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.Size = new System.Drawing.Size(89, 87);
-            tableLayoutPanel2.TabIndex = 25;
+            DirectionsControlsLayout.ColumnCount = 1;
+            DirectionsControlsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            DirectionsControlsLayout.Controls.Add(DirectionsLabel, 0, 0);
+            DirectionsControlsLayout.Controls.Add(AddDirection, 0, 1);
+            DirectionsControlsLayout.Controls.Add(RemoveDirection, 0, 2);
+            DirectionsControlsLayout.Location = new System.Drawing.Point(3, 385);
+            DirectionsControlsLayout.Name = "DirectionsControlsLayout";
+            DirectionsControlsLayout.RowCount = 3;
+            DirectionsControlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            DirectionsControlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            DirectionsControlsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            DirectionsControlsLayout.Size = new System.Drawing.Size(89, 87);
+            DirectionsControlsLayout.TabIndex = 25;
             // 
             // DirectionsLabel
             // 
@@ -480,151 +480,151 @@
             DirectionsLabel.TabIndex = 18;
             DirectionsLabel.Text = "&Directions";
             // 
-            // button3
+            // AddDirection
             // 
-            button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            button3.Location = new System.Drawing.Point(3, 32);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(83, 23);
-            button3.TabIndex = 19;
-            button3.Text = "Add";
-            button3.UseVisualStyleBackColor = true;
+            AddDirection.Dock = System.Windows.Forms.DockStyle.Fill;
+            AddDirection.Location = new System.Drawing.Point(3, 32);
+            AddDirection.Name = "AddDirection";
+            AddDirection.Size = new System.Drawing.Size(83, 23);
+            AddDirection.TabIndex = 19;
+            AddDirection.Text = "Add";
+            AddDirection.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // RemoveDirection
             // 
-            button4.Dock = System.Windows.Forms.DockStyle.Fill;
-            button4.Location = new System.Drawing.Point(3, 61);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(83, 23);
-            button4.TabIndex = 20;
-            button4.Text = "Remove";
-            button4.UseVisualStyleBackColor = true;
+            RemoveDirection.Dock = System.Windows.Forms.DockStyle.Fill;
+            RemoveDirection.Location = new System.Drawing.Point(3, 61);
+            RemoveDirection.Name = "RemoveDirection";
+            RemoveDirection.Size = new System.Drawing.Size(83, 23);
+            RemoveDirection.TabIndex = 20;
+            RemoveDirection.Text = "Remove";
+            RemoveDirection.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
+            // MainToolStrip
             // 
-            toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { Toolstrip, toolStripSeparator3, toolStripButton1 });
-            toolStrip1.Location = new System.Drawing.Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new System.Drawing.Size(145, 20);
-            toolStrip1.TabIndex = 4;
-            toolStrip1.Text = "toolStrip1";
+            MainToolStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            MainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            MainToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { ApplicationActions, Separator3, RecipeActions });
+            MainToolStrip.Location = new System.Drawing.Point(0, 0);
+            MainToolStrip.Name = "MainToolStrip";
+            MainToolStrip.Size = new System.Drawing.Size(145, 20);
+            MainToolStrip.TabIndex = 4;
+            MainToolStrip.Text = "toolStrip1";
             // 
-            // Toolstrip
+            // ApplicationActions
             // 
-            Toolstrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            Toolstrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { newRecipeToolStripMenuItem, saveRecipeToolStripMenuItem, deleteRecipeToolStripMenuItem, toolStripSeparator4, ingredientsToolStripMenuItem1, tagsToolStripMenuItem1, toolStripSeparator5, settingsToolStripMenuItem1, helpToolStripMenuItem });
-            Toolstrip.ImageTransparentColor = System.Drawing.Color.Magenta;
-            Toolstrip.Name = "Toolstrip";
-            Toolstrip.Size = new System.Drawing.Size(81, 17);
-            Toolstrip.Text = "Application";
+            ApplicationActions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            ApplicationActions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { NewRecipeAction, SaveRecipeAction, DeleteRecipeAction, Separator4, ApplicationIngredientsAction, ApplicationTagsAction, Separator5, SettingsAction, HelpAction });
+            ApplicationActions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            ApplicationActions.Name = "ApplicationActions";
+            ApplicationActions.Size = new System.Drawing.Size(81, 17);
+            ApplicationActions.Text = "Application";
             // 
-            // newRecipeToolStripMenuItem
+            // NewRecipeAction
             // 
-            newRecipeToolStripMenuItem.Name = "newRecipeToolStripMenuItem";
-            newRecipeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            newRecipeToolStripMenuItem.Text = "New Recipe";
-            newRecipeToolStripMenuItem.Click += CreateNew_Click;
+            NewRecipeAction.Name = "NewRecipeAction";
+            NewRecipeAction.Size = new System.Drawing.Size(180, 22);
+            NewRecipeAction.Text = "New Recipe";
+            NewRecipeAction.Click += CreateNew_Click;
             // 
-            // saveRecipeToolStripMenuItem
+            // SaveRecipeAction
             // 
-            saveRecipeToolStripMenuItem.Name = "saveRecipeToolStripMenuItem";
-            saveRecipeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            saveRecipeToolStripMenuItem.Text = "Save Recipe";
-            saveRecipeToolStripMenuItem.Click += Save_Click;
+            SaveRecipeAction.Name = "SaveRecipeAction";
+            SaveRecipeAction.Size = new System.Drawing.Size(180, 22);
+            SaveRecipeAction.Text = "Save Recipe";
+            SaveRecipeAction.Click += Save_Click;
             // 
-            // deleteRecipeToolStripMenuItem
+            // DeleteRecipeAction
             // 
-            deleteRecipeToolStripMenuItem.Name = "deleteRecipeToolStripMenuItem";
-            deleteRecipeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            deleteRecipeToolStripMenuItem.Text = "Delete Recipe";
-            deleteRecipeToolStripMenuItem.Click += Delete_Click;
+            DeleteRecipeAction.Name = "DeleteRecipeAction";
+            DeleteRecipeAction.Size = new System.Drawing.Size(180, 22);
+            DeleteRecipeAction.Text = "Delete Recipe";
+            DeleteRecipeAction.Click += Delete_Click;
             // 
-            // toolStripSeparator4
+            // Separator4
             // 
-            toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new System.Drawing.Size(142, 6);
+            Separator4.Name = "Separator4";
+            Separator4.Size = new System.Drawing.Size(177, 6);
             // 
-            // ingredientsToolStripMenuItem1
+            // ApplicationIngredientsAction
             // 
-            ingredientsToolStripMenuItem1.Name = "ingredientsToolStripMenuItem1";
-            ingredientsToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
-            ingredientsToolStripMenuItem1.Text = "Ingredients";
-            ingredientsToolStripMenuItem1.Click += Options_Click;
+            ApplicationIngredientsAction.Name = "ApplicationIngredientsAction";
+            ApplicationIngredientsAction.Size = new System.Drawing.Size(180, 22);
+            ApplicationIngredientsAction.Text = "Ingredients";
+            ApplicationIngredientsAction.Click += Options_Click;
             // 
-            // tagsToolStripMenuItem1
+            // ApplicationTagsAction
             // 
-            tagsToolStripMenuItem1.Name = "tagsToolStripMenuItem1";
-            tagsToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
-            tagsToolStripMenuItem1.Text = "Tags";
-            tagsToolStripMenuItem1.Click += Options_Click;
+            ApplicationTagsAction.Name = "ApplicationTagsAction";
+            ApplicationTagsAction.Size = new System.Drawing.Size(180, 22);
+            ApplicationTagsAction.Text = "Tags";
+            ApplicationTagsAction.Click += Options_Click;
             // 
-            // toolStripSeparator5
+            // Separator5
             // 
-            toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new System.Drawing.Size(142, 6);
+            Separator5.Name = "Separator5";
+            Separator5.Size = new System.Drawing.Size(177, 6);
             // 
-            // settingsToolStripMenuItem1
+            // SettingsAction
             // 
-            settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
-            settingsToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
-            settingsToolStripMenuItem1.Text = "Settings";
-            settingsToolStripMenuItem1.Click += Options_Click;
+            SettingsAction.Name = "SettingsAction";
+            SettingsAction.Size = new System.Drawing.Size(180, 22);
+            SettingsAction.Text = "Settings";
+            SettingsAction.Click += Options_Click;
             // 
-            // helpToolStripMenuItem
+            // HelpAction
             // 
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            helpToolStripMenuItem.Text = "Help";
-            helpToolStripMenuItem.Click += Options_Click;
+            HelpAction.Name = "HelpAction";
+            HelpAction.Size = new System.Drawing.Size(180, 22);
+            HelpAction.Text = "Help";
+            HelpAction.Click += Options_Click;
             // 
-            // toolStripSeparator3
+            // Separator3
             // 
-            toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new System.Drawing.Size(6, 20);
+            Separator3.Name = "Separator3";
+            Separator3.Size = new System.Drawing.Size(6, 20);
             // 
-            // toolStripButton1
+            // RecipeActions
             // 
-            toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            toolStripButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { tagsToolStripMenuItem2, imagesToolStripMenuItem, exportShoppingListToolStripMenuItem });
-            toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new System.Drawing.Size(55, 17);
-            toolStripButton1.Text = "Recipe";
+            RecipeActions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            RecipeActions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { RecipeTagsAction, RecipeImagesAction, ExportShoppingListAction });
+            RecipeActions.ImageTransparentColor = System.Drawing.Color.Magenta;
+            RecipeActions.Name = "RecipeActions";
+            RecipeActions.Size = new System.Drawing.Size(55, 17);
+            RecipeActions.Text = "Recipe";
             // 
-            // tagsToolStripMenuItem2
+            // RecipeTagsAction
             // 
-            tagsToolStripMenuItem2.Name = "tagsToolStripMenuItem2";
-            tagsToolStripMenuItem2.Size = new System.Drawing.Size(183, 22);
-            tagsToolStripMenuItem2.Text = "Tags";
+            RecipeTagsAction.Name = "RecipeTagsAction";
+            RecipeTagsAction.Size = new System.Drawing.Size(183, 22);
+            RecipeTagsAction.Text = "Tags";
             // 
-            // imagesToolStripMenuItem
+            // RecipeImagesAction
             // 
-            imagesToolStripMenuItem.Name = "imagesToolStripMenuItem";
-            imagesToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            imagesToolStripMenuItem.Text = "Images";
+            RecipeImagesAction.Name = "RecipeImagesAction";
+            RecipeImagesAction.Size = new System.Drawing.Size(183, 22);
+            RecipeImagesAction.Text = "Images";
             // 
-            // exportShoppingListToolStripMenuItem
+            // ExportShoppingListAction
             // 
-            exportShoppingListToolStripMenuItem.Name = "exportShoppingListToolStripMenuItem";
-            exportShoppingListToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            exportShoppingListToolStripMenuItem.Text = "Export Shopping List";
+            ExportShoppingListAction.Name = "ExportShoppingListAction";
+            ExportShoppingListAction.Size = new System.Drawing.Size(183, 22);
+            ExportShoppingListAction.Text = "Export Shopping List";
             // 
-            // pictureBox1
+            // RecipeIcon
             // 
-            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new System.Drawing.Point(1065, 3);
-            pictureBox1.Name = "pictureBox1";
-            FormLayout.SetRowSpan(pictureBox1, 3);
-            pictureBox1.Size = new System.Drawing.Size(123, 122);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            RecipeIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            RecipeIcon.Dock = System.Windows.Forms.DockStyle.Fill;
+            RecipeIcon.Image = (System.Drawing.Image)resources.GetObject("RecipeIcon.Image");
+            RecipeIcon.InitialImage = (System.Drawing.Image)resources.GetObject("RecipeIcon.InitialImage");
+            RecipeIcon.Location = new System.Drawing.Point(1065, 3);
+            RecipeIcon.Name = "RecipeIcon";
+            FormLayout.SetRowSpan(RecipeIcon, 3);
+            RecipeIcon.Size = new System.Drawing.Size(123, 122);
+            RecipeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            RecipeIcon.TabIndex = 5;
+            RecipeIcon.TabStop = false;
             // 
             // RecipeListLayout
             // 
@@ -765,13 +765,13 @@
             PrepTimeGroup.PerformLayout();
             RecipeInformationLayout.ResumeLayout(false);
             RecipeInformationLayout.PerformLayout();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            IngredientControlsLayout.ResumeLayout(false);
+            IngredientControlsLayout.PerformLayout();
+            DirectionsControlsLayout.ResumeLayout(false);
+            DirectionsControlsLayout.PerformLayout();
+            MainToolStrip.ResumeLayout(false);
+            MainToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)RecipeIcon).EndInit();
             RecipeListLayout.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -812,31 +812,31 @@
         public System.Windows.Forms.Label PrepDays;
         public System.Windows.Forms.Label PrepHours;
         public System.Windows.Forms.Label PrepMinutes;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripDropDownButton Toolstrip;
-        private System.Windows.Forms.ToolStripMenuItem newRecipeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveRecipeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteRecipeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem ingredientsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem tagsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripButton1;
-        private System.Windows.Forms.ToolStripMenuItem tagsToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem imagesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportShoppingListToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStrip MainToolStrip;
+        private System.Windows.Forms.ToolStripSeparator Separator3;
+        private System.Windows.Forms.ToolStripDropDownButton ApplicationActions;
+        private System.Windows.Forms.ToolStripMenuItem NewRecipeAction;
+        private System.Windows.Forms.ToolStripMenuItem SaveRecipeAction;
+        private System.Windows.Forms.ToolStripMenuItem DeleteRecipeAction;
+        private System.Windows.Forms.ToolStripSeparator Separator4;
+        private System.Windows.Forms.ToolStripMenuItem ApplicationIngredientsAction;
+        private System.Windows.Forms.ToolStripMenuItem ApplicationTagsAction;
+        private System.Windows.Forms.ToolStripSeparator Separator5;
+        private System.Windows.Forms.ToolStripMenuItem SettingsAction;
+        private System.Windows.Forms.ToolStripMenuItem HelpAction;
+        private System.Windows.Forms.ToolStripDropDownButton RecipeActions;
+        private System.Windows.Forms.ToolStripMenuItem RecipeTagsAction;
+        private System.Windows.Forms.ToolStripMenuItem RecipeImagesAction;
+        private System.Windows.Forms.ToolStripMenuItem ExportShoppingListAction;
+        private System.Windows.Forms.PictureBox RecipeIcon;
+        private System.Windows.Forms.TableLayoutPanel IngredientControlsLayout;
+        private System.Windows.Forms.Button AddIngredient;
+        private System.Windows.Forms.Button RemoveIngredient;
         private System.Windows.Forms.ListBox RecipeIngredients;
         private System.Windows.Forms.ListBox RecipeDirections;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TableLayoutPanel DirectionsControlsLayout;
+        private System.Windows.Forms.Button AddDirection;
+        private System.Windows.Forms.Button RemoveDirection;
     }
 }
 
