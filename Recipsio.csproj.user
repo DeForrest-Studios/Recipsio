@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Forms\AddIngredientForm.cs">
+    <Compile Update="Forms\AddRecipeIngredientForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\HelpForm.cs">
@@ -11,7 +11,7 @@
     <Compile Update="Forms\ImagesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\IngredientsForm.cs">
+    <Compile Update="Forms\ApplicationIngredientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MainForm.cs">

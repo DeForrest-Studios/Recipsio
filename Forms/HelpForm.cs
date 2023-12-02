@@ -5,8 +5,12 @@ namespace Recipsio
 {
     public partial class HelpForm : Form
     {
-        public HelpForm()
+        public MainForm MF;
+        public Toolbox TB;
+        public HelpForm(MainForm MF, Toolbox TB)
         {
+            this.MF = MF;
+            this.TB = TB;
             InitializeComponent();
             KeyPreview = true;
         }

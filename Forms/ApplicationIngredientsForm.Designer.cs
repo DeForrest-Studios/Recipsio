@@ -1,6 +1,6 @@
 ﻿namespace Recipsio
 {
-    partial class IngredientsForm
+    partial class ApplicationIngredientsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationIngredientsForm));
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             IngredientInput = new System.Windows.Forms.RichTextBox();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             AddIngredient = new System.Windows.Forms.Button();
             RemoveIngredient = new System.Windows.Forms.Button();
-            listBox1 = new System.Windows.Forms.ListBox();
+            IngredientsList = new System.Windows.Forms.ListBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -45,7 +45,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(IngredientInput, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 1);
-            tableLayoutPanel1.Controls.Add(listBox1, 0, 2);
+            tableLayoutPanel1.Controls.Add(IngredientsList, 0, 2);
             tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -89,6 +89,7 @@
             AddIngredient.TabIndex = 2;
             AddIngredient.Text = "Add";
             AddIngredient.UseVisualStyleBackColor = true;
+            AddIngredient.Click += AddIngredients_Click;
             // 
             // RemoveIngredient
             // 
@@ -99,16 +100,17 @@
             RemoveIngredient.TabIndex = 3;
             RemoveIngredient.Text = "Remove";
             RemoveIngredient.UseVisualStyleBackColor = true;
+            RemoveIngredient.Click += RemoveIngredient_Click;
             // 
-            // listBox1
+            // IngredientsList
             // 
-            listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 14;
-            listBox1.Location = new System.Drawing.Point(3, 63);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new System.Drawing.Size(178, 295);
-            listBox1.TabIndex = 0;
+            IngredientsList.Dock = System.Windows.Forms.DockStyle.Fill;
+            IngredientsList.FormattingEnabled = true;
+            IngredientsList.ItemHeight = 14;
+            IngredientsList.Location = new System.Drawing.Point(3, 63);
+            IngredientsList.Name = "IngredientsList";
+            IngredientsList.Size = new System.Drawing.Size(178, 295);
+            IngredientsList.TabIndex = 0;
             // 
             // IngredientsForm
             // 
@@ -135,6 +137,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button AddIngredient;
         private System.Windows.Forms.Button RemoveIngredient;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox IngredientsList;
     }
 }

@@ -414,7 +414,7 @@
             AddIngredient.TabIndex = 20;
             AddIngredient.Text = "Add";
             AddIngredient.UseVisualStyleBackColor = true;
-            AddIngredient.Click += AddIngredient_Click;
+            AddIngredient.Click += Add_Ingredient_Click;
             // 
             // RemoveIngredient
             // 
@@ -425,6 +425,7 @@
             RemoveIngredient.TabIndex = 21;
             RemoveIngredient.Text = "Remove";
             RemoveIngredient.UseVisualStyleBackColor = true;
+            RemoveIngredient.Click += Remove_Ingredient_Click;
             // 
             // RecipeIngredients
             // 

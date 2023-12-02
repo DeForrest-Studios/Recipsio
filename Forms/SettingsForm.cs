@@ -5,8 +5,12 @@ namespace Recipsio
 {
     public partial class SettingsForm : Form
     {
-        public SettingsForm()
+        public MainForm MF;
+        public Toolbox TB;
+        public SettingsForm(MainForm MF, Toolbox TB)
         {
+            this.MF = MF;
+            this.TB = TB;
             InitializeComponent();
             KeyPreview = true;
         }

@@ -5,8 +5,12 @@ namespace Recipsio
 {
     public partial class TagsForm : Form
     {
-        public TagsForm()
+        public MainForm MF;
+        public Toolbox TB;
+        public TagsForm(MainForm MF, Toolbox TB)
         {
+            this.MF = MF;
+            this.TB = TB;
             InitializeComponent();
             KeyPreview = true;
         }

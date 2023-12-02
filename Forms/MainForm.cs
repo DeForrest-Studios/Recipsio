@@ -17,6 +17,7 @@ namespace Recipsio
             Manager = new Toolbox(this);
             Manager.Generate_User_Directories();
             Manager.Load_Files(ref RecipeList);
+            Manager.Load_Ingredients();
             KeyPreview = true;
         }
 
@@ -155,14 +156,14 @@ namespace Recipsio
             {
                 { "Images", typeof(ImagesForm) },
                 { "Tags", typeof(TagsForm) },
-                { "Ingredients", typeof(IngredientsForm) },
+                { "Ingredients", typeof(ApplicationIngredientsForm) },
                 { "Settings", typeof(SettingsForm) },
                 { "Help", typeof(HelpForm) },
             };
 
             ToolStripItem ItemClicked = (ToolStripItem)Sender;
             _ = FormMap.TryGetValue(ItemClicked.Text, out Type? FormType);
-            Form NewForm = (Form)Activator.CreateInstance(FormType!)!;
+            Form NewForm = (Form)Activator.CreateInstance(FormType!, this, Manager)!;
             NewForm.ShowDialog();
         }
         private void Search_Leave(object sender, EventArgs e)
@@ -185,10 +186,17 @@ namespace Recipsio
         {
 
         }
-        private void AddIngredient_Click(object Sender, EventArgs E)
+        private void Add_Ingredient_Click(object Sender, EventArgs E)
         {
-            AddIngredientForm AIF = new();
+            AddRecipeIngredientForm AIF = new(this, Manager);
             AIF.ShowDialog(this);
+        }
+        private void Remove_Ingredient_Click(object Sender, EventArgs E)
+        {
+            if (RecipeIngredients.SelectedItem != null)
+            {
+                RecipeIngredients.Items.Remove(RecipeIngredients.SelectedItem);
+            }
         }
     }
     public partial class Toolbox
