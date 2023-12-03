@@ -19,6 +19,12 @@
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_D148949E4E074307A96104CEB8CD775E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -116,6 +122,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D148949E4E074307A96104CEB8CD775E"
+            {
+            "SourcePath" = "8:..\\recipe.ico"
+            "TargetName" = "8:recipe.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_684C4EB42E8A4D038E4BA6F8AA772F76"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -293,6 +319,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_59A9B6D71E744066AC18294B72281C07"
+            {
+            "Name" = "8:Recipsio"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_73FE0BE4420E4FC3A8C7082ACBD687BA"
+            "Folder" = "8:_5E38DF2CC4E44072A919CF1DFEB846D0"
+            "WorkingFolder" = "8:_684C4EB42E8A4D038E4BA6F8AA772F76"
+            "Icon" = "8:_D148949E4E074307A96104CEB8CD775E"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A1999CDE6D504BA78C25A7100BCA0788"
+            {
+            "Name" = "8:Recipsio"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_73FE0BE4420E4FC3A8C7082ACBD687BA"
+            "Folder" = "8:_303F56EE4D2B45FD8ABB2E8EDCD2F1D3"
+            "WorkingFolder" = "8:_684C4EB42E8A4D038E4BA6F8AA772F76"
+            "Icon" = "8:_D148949E4E074307A96104CEB8CD775E"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
