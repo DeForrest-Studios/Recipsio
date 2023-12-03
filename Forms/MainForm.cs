@@ -16,7 +16,7 @@ namespace Recipsio
             InitializeComponent();
             Manager = new Toolbox(this);
             Manager.Generate_User_Directories();
-            Manager.Load_Files(ref RecipeList);
+            Manager.Load_Recipes(ref RecipeList);
             Manager.Load_Ingredients();
             KeyPreview = true;
         }
@@ -91,7 +91,7 @@ namespace Recipsio
 
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
 
-            string[] Lines = Manager.Load_File(CurrentRecipe);
+            string[] Lines = Manager.Load_Recipe(CurrentRecipe);
 
             string DataState;
             Control? FoundControl = null;
