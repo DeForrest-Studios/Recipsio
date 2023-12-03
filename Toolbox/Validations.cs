@@ -65,7 +65,7 @@ namespace Recipsio
                 }
                 if (Control is ListBox LB)
                 {
-                    if (LB.Controls.Count == 0)
+                    if (LB.Items.Count == 0 && LB.Name != "RecipeDirections")
                     {
                         EmptyFieldTags.Add(LB.Tag.ToString()!);
                     }

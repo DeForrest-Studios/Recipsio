@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Recipsio
@@ -91,27 +92,7 @@ namespace Recipsio
 
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
 
-            string[] Lines = Manager.Load_Recipe(CurrentRecipe);
-
-            string DataState;
-            Control? FoundControl = null;
-
-            for (int Index = 0; Index < Lines.Length; Index++)
-            {
-                if (Lines[Index][0] == ':')
-                {
-                    DataState = Lines[Index][1..];
-                    FoundControl = Controls.Find(DataState, true)[0];
-                }
-                else if (Index == (Lines.Length - 1))
-                {
-                    FoundControl!.Text += Lines[Index];
-                }
-                else
-                {
-                    FoundControl!.Text += Lines[Index] + "\n";
-                }
-            }
+            Manager.Load_Recipe(CurrentRecipe);
         }
         private void RichTextBox_Key_Down(object Sender, KeyEventArgs KeyEvent)
         {

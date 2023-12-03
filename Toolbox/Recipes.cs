@@ -1,26 +1,75 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Recipsio
 {
     public partial class Toolbox
     {
-        public static string Build_File_Formatted_Recipe(MainForm RM)
+        public static string Build_File_Formatted_Recipe(MainForm MF)
         {
-            string NameString = $":Name\n{RM.RecipeName.Text}";
-
-            string AuthorString = $":Author\n{RM.RecipeAuthor.Text}";
-
-            string DescriptionString = $":Description\n{RM.RecipeDescription.Text}";
-
-            return $"{NameString}\n{AuthorString}\n{DescriptionString}";
+            return $":Name\n{MF.RecipeName.Text}" +
+                   $":Author\n{MF.RecipeAuthor.Text}" +
+                   $":PrepTime\n{MF.PrepDays}:{MF.PrepHours}:{MF.PrepMinutes}\n" +
+                   $":CookTime\n{MF.CookDays}:{MF.CookHours}:{MF.CookMinutes}\n" +
+                   $":Description\n{MF.RecipeDescription.Text}\n" +
+                   $":Ingredients\n{string.Join("|", MF.RecipeIngredients.Items.Cast<string>())}";
         }
-        public string[] Load_Recipe(string CurrentRecipe)
+        public void Load_Recipe(string CurrentRecipe)
         {
             RecipeFile = $"{RecipsioRecipesFolder}\\{CurrentRecipe.Replace(" ", "-")}.recipe";
 
-            return File.ReadAllLines(RecipeFile);
+            string[] Lines = File.ReadAllLines(RecipeFile);
+
+            string DataState = "";
+            Debug.WriteLine(Lines.Length);
+            for (int Index = 0; Index < Lines.Length; Index++)
+            {
+                if (Lines[Index][0] == ':')
+                {
+                    DataState = Lines[Index][1..];
+                    continue;
+                }
+
+                if (DataState == "Name")
+                {
+                    MF.RecipeName.Text = Lines[Index];
+                }
+                else if (DataState == "Author")
+                {
+                    MF.RecipeAuthor.Text = Lines[Index];
+                }
+                else if (DataState == "PrepTime")
+                {
+                    string[] Times = Lines[Index].Split(":");
+                    MF.PrepDays.Text = $"{Times[0]} Days";
+                    MF.PrepHours.Text = $"{Times[1]} Hours";
+                    MF.PrepMinutes.Text = $"{Times[2]} Minutes";
+                }
+                else if (DataState == "CookTime")
+                {
+                    string[] Times = Lines[Index].Split(":");
+                    MF.CookDays.Text = $"{Times[0]} Days";
+                    MF.CookHours.Text = $"{Times[1]} Hours";
+                    MF.CookMinutes.Text = $"{Times[2]} Minutes";
+                }
+                else if (DataState == "Description")
+                {
+                    MF.RecipeDescription.Text = Lines[Index];
+                }
+                else if (DataState == "Ingredients")
+                {
+                    List<string> Ingredients = Lines[Index].Split('|').ToList();
+                    foreach (string Ingredient in Ingredients)
+                    {
+                        MF.RecipeIngredients.Items.Add(Ingredient);
+                    }
+                }
+            }
+            Update_Times();
         }
         public void Load_Recipes(ref ListBox RecipeList)
         {
