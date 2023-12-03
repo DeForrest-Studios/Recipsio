@@ -1,2 +1,3 @@
-# RecipeManager
- Recipe Manager using Winforms for Final Project
+# Recipsio
+
+A recipe manager for home, and professional chefs.

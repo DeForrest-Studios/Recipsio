@@ -1,6 +1,6 @@
 ﻿namespace Recipsio
 {
-    partial class TagsForm
+    partial class ApplicationTagsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TagsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationTagsForm));
             tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             TagInput = new System.Windows.Forms.RichTextBox();
             tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();

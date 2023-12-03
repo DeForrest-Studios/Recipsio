@@ -1,6 +1,6 @@
 ﻿namespace Recipsio
 {
-    partial class AddRecipeIngredientForm
+    partial class RecipeIngredientForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddRecipeIngredientForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecipeIngredientForm));
             button1 = new System.Windows.Forms.Button();
             IngredientChoice = new System.Windows.Forms.ComboBox();
             MeasurementChoice = new System.Windows.Forms.ComboBox();
@@ -132,12 +132,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox IngredientChoice;
-        private System.Windows.Forms.ComboBox MeasurementChoice;
-        private System.Windows.Forms.TextBox MeasurementAmount;
-        private System.Windows.Forms.Label AmountLabel;
-        private System.Windows.Forms.Label MeasurementLabel;
-        private System.Windows.Forms.Label IngredientLabel;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox IngredientChoice;
+        public System.Windows.Forms.ComboBox MeasurementChoice;
+        public System.Windows.Forms.TextBox MeasurementAmount;
+        public System.Windows.Forms.Label AmountLabel;
+        public System.Windows.Forms.Label MeasurementLabel;
+        public System.Windows.Forms.Label IngredientLabel;
     }
 }

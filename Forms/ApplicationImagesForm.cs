@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace Recipsio
 {
-    public partial class HelpForm : Form
+    public partial class ApplicationImagesForm : Form
     {
         public MainForm MF;
         public Toolbox TB;
-        public HelpForm(MainForm MF, Toolbox TB)
+        public ApplicationImagesForm(MainForm MF, Toolbox TB)
         {
             this.MF = MF;
             this.TB = TB;

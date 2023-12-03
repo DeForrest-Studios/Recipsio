@@ -115,7 +115,7 @@
             FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             FormLayout.Size = new System.Drawing.Size(1191, 708);
             FormLayout.TabIndex = 0;
-            FormLayout.MouseClick += Control_MouseClick;
+            FormLayout.MouseClick += Control_Mouse_Click;
             // 
             // RecipeHeaderLayout
             // 
@@ -138,7 +138,7 @@
             RecipeHeaderLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.4545441F));
             RecipeHeaderLayout.Size = new System.Drawing.Size(867, 94);
             RecipeHeaderLayout.TabIndex = 1;
-            RecipeHeaderLayout.MouseClick += Control_MouseClick;
+            RecipeHeaderLayout.MouseClick += Control_Mouse_Click;
             // 
             // AuthorGroupBox
             // 
@@ -152,7 +152,7 @@
             AuthorGroupBox.TabIndex = 22;
             AuthorGroupBox.TabStop = false;
             AuthorGroupBox.Text = "Author";
-            AuthorGroupBox.MouseClick += Control_MouseClick;
+            AuthorGroupBox.MouseClick += Control_Mouse_Click;
             // 
             // RecipeAuthor
             // 
@@ -180,7 +180,7 @@
             CookTime.TabStop = false;
             CookTime.Tag = "Cook Time";
             CookTime.Text = "Cook Time";
-            CookTime.MouseClick += Control_MouseClick;
+            CookTime.MouseClick += Control_Mouse_Click;
             // 
             // CookDays
             // 
@@ -193,7 +193,7 @@
             CookDays.TabIndex = 6;
             CookDays.Tag = "Days";
             CookDays.Text = "0 Days";
-            CookDays.MouseClick += Time_MouseClick;
+            CookDays.MouseClick += Time_Mouse_Click;
             // 
             // CookHours
             // 
@@ -206,7 +206,7 @@
             CookHours.TabIndex = 7;
             CookHours.Tag = "Hours";
             CookHours.Text = "0 Hours";
-            CookHours.MouseClick += Time_MouseClick;
+            CookHours.MouseClick += Time_Mouse_Click;
             // 
             // CookMinutes
             // 
@@ -219,7 +219,7 @@
             CookMinutes.TabIndex = 8;
             CookMinutes.Tag = "Minutes";
             CookMinutes.Text = "0 Minutes";
-            CookMinutes.MouseClick += Time_MouseClick;
+            CookMinutes.MouseClick += Time_Mouse_Click;
             // 
             // TotalTime
             // 
@@ -233,7 +233,7 @@
             TotalTime.TabIndex = 20;
             TotalTime.TabStop = false;
             TotalTime.Text = "Total Time";
-            TotalTime.MouseClick += Control_MouseClick;
+            TotalTime.MouseClick += Control_Mouse_Click;
             // 
             // TotalTimeValue
             // 
@@ -259,7 +259,7 @@
             NameGroupBox.TabIndex = 2;
             NameGroupBox.TabStop = false;
             NameGroupBox.Text = "Name";
-            NameGroupBox.MouseClick += Control_MouseClick;
+            NameGroupBox.MouseClick += Control_Mouse_Click;
             // 
             // RecipeName
             // 
@@ -288,7 +288,7 @@
             PrepTime.TabStop = false;
             PrepTime.Tag = "Preparation Time";
             PrepTime.Text = "Prep Time";
-            PrepTime.MouseClick += Control_MouseClick;
+            PrepTime.MouseClick += Control_Mouse_Click;
             // 
             // PrepDays
             // 
@@ -301,7 +301,7 @@
             PrepDays.TabIndex = 3;
             PrepDays.Tag = "Days";
             PrepDays.Text = "0 Days";
-            PrepDays.MouseClick += Time_MouseClick;
+            PrepDays.MouseClick += Time_Mouse_Click;
             // 
             // PrepHours
             // 
@@ -314,7 +314,7 @@
             PrepHours.TabIndex = 4;
             PrepHours.Tag = "Hours";
             PrepHours.Text = "0 Hours";
-            PrepHours.MouseClick += Time_MouseClick;
+            PrepHours.MouseClick += Time_Mouse_Click;
             // 
             // PrepMinutes
             // 
@@ -327,7 +327,7 @@
             PrepMinutes.TabIndex = 5;
             PrepMinutes.Tag = "Minutes";
             PrepMinutes.Text = "0 Minutes";
-            PrepMinutes.MouseClick += Time_MouseClick;
+            PrepMinutes.MouseClick += Time_Mouse_Click;
             // 
             // RecipeInformationLayout
             // 
@@ -352,7 +352,7 @@
             RecipeInformationLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.3333321F));
             RecipeInformationLayout.Size = new System.Drawing.Size(996, 574);
             RecipeInformationLayout.TabIndex = 0;
-            RecipeInformationLayout.MouseClick += Control_MouseClick;
+            RecipeInformationLayout.MouseClick += Control_Mouse_Click;
             // 
             // DescriptionLabel
             // 
@@ -522,21 +522,21 @@
             NewRecipeAction.Name = "NewRecipeAction";
             NewRecipeAction.Size = new System.Drawing.Size(145, 22);
             NewRecipeAction.Text = "New Recipe";
-            NewRecipeAction.Click += CreateNew_Click;
+            NewRecipeAction.Click += Create_New__Recipe_Click;
             // 
             // SaveRecipeAction
             // 
             SaveRecipeAction.Name = "SaveRecipeAction";
             SaveRecipeAction.Size = new System.Drawing.Size(145, 22);
             SaveRecipeAction.Text = "Save Recipe";
-            SaveRecipeAction.Click += Save_Click;
+            SaveRecipeAction.Click += Save_Recipe_Click;
             // 
             // DeleteRecipeAction
             // 
             DeleteRecipeAction.Name = "DeleteRecipeAction";
             DeleteRecipeAction.Size = new System.Drawing.Size(145, 22);
             DeleteRecipeAction.Text = "Delete Recipe";
-            DeleteRecipeAction.Click += Delete_Click;
+            DeleteRecipeAction.Click += Delete_Recipe_Click;
             // 
             // ApplicationActionsSeparator1
             // 
@@ -651,7 +651,7 @@
             RecipeList.Size = new System.Drawing.Size(182, 654);
             RecipeList.TabIndex = 1;
             RecipeList.TabStop = false;
-            RecipeList.SelectedValueChanged += RecipeList_SelectedValueChanged;
+            RecipeList.SelectedValueChanged += RecipeList_Selected_Value_Changed;
             // 
             // Search
             // 
@@ -662,7 +662,7 @@
             Search.Size = new System.Drawing.Size(182, 23);
             Search.TabIndex = 0;
             Search.Text = "Search...";
-            Search.TextChanged += Search_TextChanged;
+            Search.TextChanged += Search_Text_Changed;
             Search.Enter += Search_Enter;
             Search.Leave += Search_Leave;
             // 
@@ -682,8 +682,8 @@
             Name = "MainForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Recipe Toolbox";
-            KeyDown += RecipeManager_KeyDown;
-            MouseClick += Control_MouseClick;
+            KeyDown += Recipsio_Key_Down;
+            MouseClick += Control_Mouse_Click;
             FormLayout.ResumeLayout(false);
             FormLayout.PerformLayout();
             RecipeHeaderLayout.ResumeLayout(false);

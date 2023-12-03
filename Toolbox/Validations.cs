@@ -7,6 +7,23 @@ namespace Recipsio
     public partial class Toolbox
     {
         public List<dynamic> RecipeFields = new();
+        public string Is_Valid_Ingredient(RecipeIngredientForm RIF)
+        {
+            List<string> EmptyFields = new();
+            if (RIF.MeasurementAmount.Text == "")
+            {
+                EmptyFields.Add("Measurement Amount");
+            }
+            if (RIF.MeasurementChoice.SelectedItem == null)
+            {
+                EmptyFields.Add("Measurement Type");
+            }
+            if (RIF.IngredientChoice.SelectedItem == null)
+            {
+                EmptyFields.Add("Ingedient");
+            }
+            return string.Join(", ", EmptyFields);
+        }
         public bool Is_Valid_Recipe()
         {
             RecipeFields = new List<dynamic>

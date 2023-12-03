@@ -1,6 +1,6 @@
 ﻿namespace Recipsio
 {
-    partial class ImagesForm
+    partial class ApplicationImagesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImagesForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationImagesForm));
             SuspendLayout();
             // 
             // ImagesForm

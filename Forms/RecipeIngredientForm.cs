@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace Recipsio
 {
-    public partial class AddRecipeIngredientForm : Form
+    public partial class RecipeIngredientForm : Form
     {
         public MainForm MF;
         public Toolbox TB;
 
-        public AddRecipeIngredientForm(MainForm MF, Toolbox TB)
+        public RecipeIngredientForm(MainForm MF, Toolbox TB)
         {
             this.MF = MF;
             this.TB = TB;
@@ -32,27 +32,9 @@ namespace Recipsio
                 Close();
             }
         }
-        public string Is_Valid_Ingredient()
-        {
-            List<string> EmptyFields = new();
-            if (MeasurementAmount.Text == "")
-            {
-                EmptyFields.Add("Measurement Amount");
-            }
-            if (MeasurementChoice.SelectedItem == null)
-            {
-                EmptyFields.Add("Measurement Type");
-            }
-            if (IngredientChoice.SelectedItem == null)
-            {
-                EmptyFields.Add("Ingedient");
-            }
-            return string.Join(", ", EmptyFields);
-
-        }
         private void Add_Recipe_Ingredient_Click(object sender, System.EventArgs e)
         {
-            string ErrorMessage = Is_Valid_Ingredient();
+            string ErrorMessage = TB.Is_Valid_Ingredient(this);
             if (ErrorMessage == "")
             {
                 Ingredient ChosenIngredient = TB.Ingredients[IngredientChoice.SelectedItem.ToString()!];

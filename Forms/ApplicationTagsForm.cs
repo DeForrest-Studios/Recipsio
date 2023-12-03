@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace Recipsio
 {
-    public partial class SettingsForm : Form
+    public partial class ApplicationTagsForm : Form
     {
         public MainForm MF;
         public Toolbox TB;
-        public SettingsForm(MainForm MF, Toolbox TB)
+        public ApplicationTagsForm(MainForm MF, Toolbox TB)
         {
             this.MF = MF;
             this.TB = TB;

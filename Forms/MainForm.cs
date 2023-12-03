@@ -21,13 +21,13 @@ namespace Recipsio
             KeyPreview = true;
         }
 
-        private void CreateNew_Click(object Sender, EventArgs E)
+        private void Create_New__Recipe_Click(object Sender, EventArgs Eventvent)
         {
             Manager.Clear_Content_Boxes();
             CurrentRecipe = "";
             RecipeList.SelectedItem = null;
         }
-        private void Save_Click(object Sender, EventArgs E)
+        private void Save_Recipe_Click(object Sender, EventArgs Eventvent)
         {
             if (Manager.Is_Valid_Recipe())
             {
@@ -37,7 +37,7 @@ namespace Recipsio
                 }
             }
         }
-        private void Delete_Click(object Sender, EventArgs E)
+        private void Delete_Recipe_Click(object Sender, EventArgs Event)
         {
             if (CurrentRecipe == null) { return; }
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
@@ -46,7 +46,7 @@ namespace Recipsio
             RecipeList.Items.Remove(CurrentRecipe);
             RecipeList.SelectedItem = null;
         }
-        private void Time_MouseClick(object Sender, MouseEventArgs MouseEvent)
+        private void Time_Mouse_Click(object Sender, MouseEventArgs MouseEvent)
         {
             Label Label = (Label)Sender;
 
@@ -55,7 +55,7 @@ namespace Recipsio
                 GroupBox LabelGroupBox = (GroupBox)Label.Parent;
                 RichTextBox Input = new();
 
-                Input.KeyDown += new KeyEventHandler(Input_Time_KeyDown);
+                Input.KeyDown += new KeyEventHandler(Input_Time_Key_Down);
 
                 int InputX = RecipeHeaderLayout.Location.X + LabelGroupBox.Location.X + Label.Left + 16;
                 int InputY = RecipeHeaderLayout.Location.Y + LabelGroupBox.Bottom + 5;
@@ -74,7 +74,7 @@ namespace Recipsio
                 Input.BringToFront();
             }
         }
-        private void Control_MouseClick(object Sender, MouseEventArgs MouseEvent)
+        private void Control_Mouse_Click(object Sender, MouseEventArgs MouseEvent)
         {
             if (ActiveControl is RichTextBox)
             {
@@ -83,7 +83,7 @@ namespace Recipsio
                 RecipeList.Focus();
             }
         }
-        private void RecipeList_SelectedValueChanged(object Sender, EventArgs Event)
+        private void RecipeList_Selected_Value_Changed(object Sender, EventArgs Eventvent)
         {
             if (RecipeList.SelectedItem == null) return;
 
@@ -113,7 +113,7 @@ namespace Recipsio
                 }
             }
         }
-        private void RichText_KeyDown(object Sender, KeyEventArgs KeyEvent)
+        private void RichTextBox_Key_Down(object Sender, KeyEventArgs KeyEvent)
         {
             RichTextBox RichTextBox = (RichTextBox)Sender;
 
@@ -122,14 +122,14 @@ namespace Recipsio
                 RichTextBox.SelectionBullet = true;
             }
         }
-        private void RecipeManager_KeyDown(object Sender, KeyEventArgs KeyEvent)
+        private void Recipsio_Key_Down(object Sender, KeyEventArgs KeyEvent)
         {
             if (KeyEvent.KeyCode == Keys.Escape)
             {
                 Close();
             }
         }
-        private void Input_Time_KeyDown(object? Sender, KeyEventArgs KeyEvent)
+        private void Input_Time_Key_Down(object? Sender, KeyEventArgs KeyEvent)
         {
             RichTextBox Input;
             Label InputTimeLabel;
@@ -144,21 +144,21 @@ namespace Recipsio
 
             }
         }
-        private void Time_Leave(object Sender, EventArgs E)
+        private void Time_Leave(object Sender, EventArgs Event)
         {
             RichTextBox Control = (RichTextBox)Sender;
             Controls.Remove(Control);
         }
 
-        private void Options_Click(object Sender, EventArgs E)
+        private void Options_Click(object Sender, EventArgs Event)
         {
             Dictionary<string, Type> FormMap = new()
             {
-                { "Images", typeof(ImagesForm) },
-                { "Tags", typeof(TagsForm) },
+                { "Images", typeof(ApplicationImagesForm) },
+                { "Tags", typeof(ApplicationTagsForm) },
                 { "Ingredients", typeof(ApplicationIngredientsForm) },
-                { "Settings", typeof(SettingsForm) },
-                { "Help", typeof(HelpForm) },
+                { "Settings", typeof(ApplicationSettingsForm) },
+                { "Help", typeof(ApplicationHelpForm) },
             };
 
             ToolStripItem ItemClicked = (ToolStripItem)Sender;
@@ -166,7 +166,7 @@ namespace Recipsio
             Form NewForm = (Form)Activator.CreateInstance(FormType!, this, Manager)!;
             NewForm.ShowDialog();
         }
-        private void Search_Leave(object sender, EventArgs e)
+        private void Search_Leave(object Sender, EventArgs E)
         {
             if (Search.Text == "")
             {
@@ -174,7 +174,7 @@ namespace Recipsio
             }
         }
 
-        private void Search_Enter(object sender, EventArgs e)
+        private void Search_Enter(object Sender, EventArgs E)
         {
             if (Search.Text == "Search...")
             {
@@ -182,16 +182,16 @@ namespace Recipsio
             }
         }
 
-        private void Search_TextChanged(object sender, EventArgs e)
+        private void Search_Text_Changed(object Sender, EventArgs E)
         {
 
         }
-        private void Add_Ingredient_Click(object Sender, EventArgs E)
+        private void Add_Ingredient_Click(object Sender, EventArgs Event)
         {
-            AddRecipeIngredientForm AIF = new(this, Manager);
+            RecipeIngredientForm AIF = new(this, Manager);
             AIF.ShowDialog(this);
         }
-        private void Remove_Ingredient_Click(object Sender, EventArgs E)
+        private void Remove_Ingredient_Click(object Sender, EventArgs Event)
         {
             if (RecipeIngredients.SelectedItem != null)
             {

@@ -1,6 +1,6 @@
 ﻿namespace Recipsio
 {
-    partial class SettingsForm
+    partial class ApplicationHelpForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationHelpForm));
             SuspendLayout();
             // 
-            // SettingsForm
+            // HelpForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -41,9 +41,9 @@
             Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Name = "SettingsForm";
+            Name = "HelpForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            Text = "Settings";
+            Text = "Untitled";
             KeyDown += Form_KeyDown;
             ResumeLayout(false);
         }
