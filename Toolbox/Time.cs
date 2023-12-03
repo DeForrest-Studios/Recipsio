@@ -17,9 +17,32 @@ namespace Recipsio
 
             TimeSpan Time = new(Days, Hours, Minutes, 0);
 
-            MinutesLabel.Text = Time.Minutes.ToString() + " " + MinutesLabel.Tag.ToString();
-            HoursLabel.Text = Time.Hours.ToString() + " " + HoursLabel.Tag.ToString();
-            DaysLabel.Text = Time.Days.ToString() + " " + DaysLabel.Tag.ToString();
+            if (Time.Days == 1)
+            {
+                DaysLabel.Text = Time.Days.ToString() + " Day ";
+            }
+            else
+            {
+                DaysLabel.Text = Time.Days.ToString() + " Days ";
+            }
+
+            if (Time.Hours == 1)
+            {
+                HoursLabel.Text = Time.Hours.ToString() + " Hour ";
+            }
+            else
+            {
+                HoursLabel.Text = Time.Hours.ToString() + " Hours ";
+            }
+
+            if (Time.Minutes == 1)
+            {
+                MinutesLabel.Text = Time.Minutes.ToString() + " Minute";
+            }
+            else
+            {
+                MinutesLabel.Text = Time.Minutes.ToString() + " Minutes";
+            }
 
             return Time;
         }
@@ -34,9 +57,32 @@ namespace Recipsio
         {
             string FormattedTimeSpan = "";
 
-            FormattedTimeSpan += $"{TotalTimeSpan.Days} Days ";
-            FormattedTimeSpan += $"{TotalTimeSpan.Hours} Hours ";
-            FormattedTimeSpan += $"{TotalTimeSpan.Minutes} Minutes";
+            if (TotalTimeSpan.Days == 1)
+            {
+                FormattedTimeSpan += $"{TotalTimeSpan.Days} Day ";
+            }
+            else
+            {
+                FormattedTimeSpan += $"{TotalTimeSpan.Days} Days ";
+            }
+
+            if (TotalTimeSpan.Hours == 1)
+            {
+                FormattedTimeSpan += $"{TotalTimeSpan.Hours} Hour ";
+            }
+            else
+            {
+                FormattedTimeSpan += $"{TotalTimeSpan.Hours} Hours ";
+            }
+
+            if (TotalTimeSpan.Minutes == 1)
+            {
+                FormattedTimeSpan += $"{TotalTimeSpan.Minutes} Minute";
+            }
+            else
+            {
+                FormattedTimeSpan += $"{TotalTimeSpan.Minutes} Minutes";
+            }
 
             return FormattedTimeSpan;
         }

@@ -11,10 +11,10 @@ namespace Recipsio
     {
         public static string Build_File_Formatted_Recipe(MainForm MF)
         {
-            return $":Name\n{MF.RecipeName.Text}" +
-                   $":Author\n{MF.RecipeAuthor.Text}" +
-                   $":PrepTime\n{MF.PrepDays}:{MF.PrepHours}:{MF.PrepMinutes}\n" +
-                   $":CookTime\n{MF.CookDays}:{MF.CookHours}:{MF.CookMinutes}\n" +
+            return $":Name\n{MF.RecipeName.Text}\n" +
+                   $":Author\n{MF.RecipeAuthor.Text}\n" +
+                   $":PrepTime\n{MF.PrepDays.Text}:{MF.PrepHours.Text}:{MF.PrepMinutes.Text}\n" +
+                   $":CookTime\n{MF.CookDays.Text}:{MF.CookHours.Text}:{MF.CookMinutes.Text}\n" +
                    $":Description\n{MF.RecipeDescription.Text}\n" +
                    $":Ingredients\n{string.Join("|", MF.RecipeIngredients.Items.Cast<string>())}";
         }
