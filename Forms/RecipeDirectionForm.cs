@@ -25,8 +25,15 @@ namespace Recipsio
 
         private void Submit_Recipe_Direction_Click(object Sender, EventArgs E)
         {
-            MF.RecipeDirections.Items.Add(RecipeDirection.Text);
-            Close();
+            if (RecipeDirection.Text != "")
+            {
+                MF.RecipeDirections.Items.Add(RecipeDirection.Text);
+                Close();
+            }
+            else
+            {
+                TB.Send_Message_Box("You cannot submit an empty description", "Empty Direction");
+            }
         }
     }
 }
