@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Recipsio
@@ -14,15 +15,15 @@ namespace Recipsio
             InitializeComponent();
             KeyPreview = true;
         }
-        private void Form_KeyDown(object Sender, KeyEventArgs KeyEvent)
+        private void Form_KeyDown(object Sender, KeyEventArgs KE)
         {
-            if (KeyEvent.KeyCode == Keys.Escape)
+            if (KE.KeyCode == Keys.Escape)
             {
                 Close();
             }
         }
 
-        private void Submit_Recipe_Direction_Click(object sender, System.EventArgs e)
+        private void Submit_Recipe_Direction_Click(object Sender, EventArgs E)
         {
             MF.RecipeDirections.Items.Add(RecipeDirection.Text);
             Close();

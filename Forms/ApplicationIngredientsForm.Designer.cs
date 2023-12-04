@@ -89,7 +89,7 @@
             AddIngredient.TabIndex = 2;
             AddIngredient.Text = "Add";
             AddIngredient.UseVisualStyleBackColor = true;
-            AddIngredient.Click += AddIngredients_Click;
+            AddIngredient.Click += Add_Ingredients_Click;
             // 
             // RemoveIngredient
             // 
@@ -100,7 +100,7 @@
             RemoveIngredient.TabIndex = 3;
             RemoveIngredient.Text = "Remove";
             RemoveIngredient.UseVisualStyleBackColor = true;
-            RemoveIngredient.Click += RemoveIngredient_Click;
+            RemoveIngredient.Click += Remove_Ingredient_Click;
             // 
             // IngredientsList
             // 
@@ -125,7 +125,7 @@
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Name = "IngredientsForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            KeyDown += Form_KeyDown;
+            KeyDown += Form_Key_Down;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System;
 using System.Windows.Forms;
 
 namespace Recipsio
@@ -20,7 +21,7 @@ namespace Recipsio
             }
 
         }
-        private void Form_KeyDown(object Sender, KeyEventArgs KeyEvent)
+        private void Form_Key_Down(object Sender, KeyEventArgs KeyEvent)
         {
             if (KeyEvent.KeyCode == Keys.Escape)
             {
@@ -28,7 +29,7 @@ namespace Recipsio
             }
         }
 
-        private void AddIngredients_Click(object sender, System.EventArgs e)
+        private void Add_Ingredients_Click(object Sender, EventArgs E)
         {
             if (IngredientInput.Text != "")
             {
@@ -47,7 +48,7 @@ namespace Recipsio
             }
         }
 
-        private void RemoveIngredient_Click(object sender, System.EventArgs e)
+        private void Remove_Ingredient_Click(object Sender, EventArgs E)
         {
             if (IngredientsList.SelectedItem != null)
             {

@@ -26,7 +26,6 @@ namespace Recipsio
             string[] Lines = File.ReadAllLines(RecipeFile);
 
             string DataState = "";
-            Debug.WriteLine(Lines.Length);
             for (int Index = 0; Index < Lines.Length; Index++)
             {
                 if (Lines[Index][0] == ':')
@@ -90,7 +89,7 @@ namespace Recipsio
                 RecipeList.Items.Add(RecipeFileString);
             }
         }
-        public string Save_Recipe(string RecipeName, MainForm RM)
+        public string Save_Recipe(string RecipeName, MainForm MF)
         {
             if (File.Exists(RecipsioRecipesFolder))
             {
@@ -99,15 +98,15 @@ namespace Recipsio
                                                        MessageBoxButtons.YesNo);
                 if (Result == DialogResult.Yes)
                 {
-                    RecipeFile = $"{RecipsioRecipesFolder}\\{RM.CurrentRecipe!.Replace(" ", "-")}.recipe";
-                    File.WriteAllText(RecipeFile!, Build_File_Formatted_Recipe(RM));
+                    RecipeFile = $"{RecipsioRecipesFolder}\\{MF.CurrentRecipe!.Replace(" ", "-")}.recipe";
+                    File.WriteAllText(RecipeFile!, Build_File_Formatted_Recipe(MF));
                     return "Old";
                 }
             }
             else
             {
                 RecipeFile = $"{RecipsioRecipesFolder}\\{RecipeName.Replace(" ", "-")}.recipe";
-                File.WriteAllText(RecipeFile, Build_File_Formatted_Recipe(RM));
+                File.WriteAllText(RecipeFile, Build_File_Formatted_Recipe(MF));
                 return "New";
             }
             return "Failure";

@@ -524,7 +524,7 @@
             NewRecipeAction.Name = "NewRecipeAction";
             NewRecipeAction.Size = new System.Drawing.Size(145, 22);
             NewRecipeAction.Text = "New Recipe";
-            NewRecipeAction.Click += Create_New__Recipe_Click;
+            NewRecipeAction.Click += Create_New_Recipe_Click;
             // 
             // SaveRecipeAction
             // 

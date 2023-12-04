@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_73FE0BE4420E4FC3A8C7082ACBD687BA"
+        "MsmKey" = "8:_030DF8268EC94FAA840C800CDF5C0E29"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D148949E4E074307A96104CEB8CD775E"
+        "MsmKey" = "8:_2AE876015B8B4B8FA37C794B67726D6C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -122,10 +122,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D148949E4E074307A96104CEB8CD775E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2AE876015B8B4B8FA37C794B67726D6C"
             {
-            "SourcePath" = "8:..\\recipe.ico"
-            "TargetName" = "8:recipe.ico"
+            "SourcePath" = "8:..\\recipsio.ico"
+            "TargetName" = "8:recipsio.ico"
             "Tag" = "8:"
             "Folder" = "8:_684C4EB42E8A4D038E4BA6F8AA772F76"
             "Condition" = "8:"
@@ -199,7 +199,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Recipsio"
         "ProductCode" = "8:{F246B1AE-5FDC-4189-A1B8-FC7BD81F0832}"
-        "PackageCode" = "8:{670D96FE-F3DA-43CF-B719-B76289FAC82B}"
+        "PackageCode" = "8:{EDB3D7A8-11AB-4CF5-B390-114FF0762DC0}"
         "UpgradeCode" = "8:{F6997F96-55F9-4080-B42D-002B0119989F}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -319,7 +319,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_59A9B6D71E744066AC18294B72281C07"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2486E3F27D5A4EF29BA276A72792B41C"
             {
             "Name" = "8:Recipsio"
             "Arguments" = "8:"
@@ -327,13 +327,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_73FE0BE4420E4FC3A8C7082ACBD687BA"
+            "Target" = "8:_030DF8268EC94FAA840C800CDF5C0E29"
             "Folder" = "8:_5E38DF2CC4E44072A919CF1DFEB846D0"
             "WorkingFolder" = "8:_684C4EB42E8A4D038E4BA6F8AA772F76"
-            "Icon" = "8:_D148949E4E074307A96104CEB8CD775E"
+            "Icon" = "8:_2AE876015B8B4B8FA37C794B67726D6C"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A1999CDE6D504BA78C25A7100BCA0788"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5D58A1C652FD433FA8A3C4F4872157F8"
             {
             "Name" = "8:Recipsio"
             "Arguments" = "8:"
@@ -341,10 +341,10 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_73FE0BE4420E4FC3A8C7082ACBD687BA"
+            "Target" = "8:_030DF8268EC94FAA840C800CDF5C0E29"
             "Folder" = "8:_303F56EE4D2B45FD8ABB2E8EDCD2F1D3"
             "WorkingFolder" = "8:_684C4EB42E8A4D038E4BA6F8AA772F76"
-            "Icon" = "8:_D148949E4E074307A96104CEB8CD775E"
+            "Icon" = "8:_2AE876015B8B4B8FA37C794B67726D6C"
             "Feature" = "8:"
             }
         }
@@ -746,7 +746,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_73FE0BE4420E4FC3A8C7082ACBD687BA"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_030DF8268EC94FAA840C800CDF5C0E29"
             {
             "SourcePath" = "8:..\\obj\\Release\\net6.0-windows7.0\\apphost.exe"
             "TargetName" = "8:"

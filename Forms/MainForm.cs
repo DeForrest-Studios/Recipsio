@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Recipsio
@@ -22,13 +21,13 @@ namespace Recipsio
             KeyPreview = true;
         }
 
-        private void Create_New__Recipe_Click(object Sender, EventArgs Eventvent)
+        private void Create_New_Recipe_Click(object Sender, EventArgs E)
         {
             Manager.Clear_Content_Boxes();
             CurrentRecipe = "";
             RecipeList.SelectedItem = null;
         }
-        private void Save_Recipe_Click(object Sender, EventArgs Eventvent)
+        private void Save_Recipe_Click(object Sender, EventArgs E)
         {
             if (Manager.Is_Valid_Recipe())
             {
@@ -38,7 +37,7 @@ namespace Recipsio
                 }
             }
         }
-        private void Delete_Recipe_Click(object Sender, EventArgs Event)
+        private void Delete_Recipe_Click(object Sender, EventArgs E)
         {
             if (CurrentRecipe == null) { return; }
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
@@ -47,11 +46,11 @@ namespace Recipsio
             RecipeList.Items.Remove(CurrentRecipe);
             RecipeList.SelectedItem = null;
         }
-        private void Time_Mouse_Click(object Sender, MouseEventArgs MouseEvent)
+        private void Time_Mouse_Click(object Sender, MouseEventArgs ME)
         {
             Label Label = (Label)Sender;
 
-            if (MouseEvent.Button == MouseButtons.Left)
+            if (ME.Button == MouseButtons.Left)
             {
                 GroupBox LabelGroupBox = (GroupBox)Label.Parent;
                 RichTextBox Input = new();
@@ -75,7 +74,7 @@ namespace Recipsio
                 Input.BringToFront();
             }
         }
-        private void Control_Mouse_Click(object Sender, MouseEventArgs MouseEvent)
+        private void Control_Mouse_Click(object Sender, MouseEventArgs ME)
         {
             if (ActiveControl is RichTextBox)
             {
@@ -84,7 +83,7 @@ namespace Recipsio
                 RecipeList.Focus();
             }
         }
-        private void RecipeList_Selected_Value_Changed(object Sender, EventArgs Eventvent)
+        private void RecipeList_Selected_Value_Changed(object Sender, EventArgs E)
         {
             if (RecipeList.SelectedItem == null) return;
 
@@ -94,29 +93,29 @@ namespace Recipsio
 
             Manager.Load_Recipe(CurrentRecipe);
         }
-        private void RichTextBox_Key_Down(object Sender, KeyEventArgs KeyEvent)
+        private void RichTextBox_Key_Down(object Sender, KeyEventArgs KE)
         {
             RichTextBox RichTextBox = (RichTextBox)Sender;
 
-            if (KeyEvent.Control && KeyEvent.KeyCode == Keys.B)
+            if (KE.Control && KE.KeyCode == Keys.B)
             {
                 RichTextBox.SelectionBullet = true;
             }
         }
-        private void Recipsio_Key_Down(object Sender, KeyEventArgs KeyEvent)
+        private void Recipsio_Key_Down(object Sender, KeyEventArgs KE)
         {
-            if (KeyEvent.KeyCode == Keys.Escape)
+            if (KE.KeyCode == Keys.Escape)
             {
                 Close();
             }
         }
-        private void Input_Time_Key_Down(object? Sender, KeyEventArgs KeyEvent)
+        private void Input_Time_Key_Down(object? Sender, KeyEventArgs KE)
         {
             RichTextBox Input;
             Label InputTimeLabel;
-            if (KeyEvent.KeyCode == Keys.Enter)
+            if (KE.KeyCode == Keys.Enter)
             {
-                KeyEvent.SuppressKeyPress = true;
+                KE.SuppressKeyPress = true;
                 Input = (RichTextBox)Sender!;
                 InputTimeLabel = (Label)Controls.Find(Input.Tag.ToString(), true)[0];
                 InputTimeLabel.Text = $"{Input.Text} {InputTimeLabel.Tag}";
@@ -125,13 +124,13 @@ namespace Recipsio
 
             }
         }
-        private void Time_Leave(object Sender, EventArgs Event)
+        private void Time_Leave(object Sender, EventArgs E)
         {
             RichTextBox Control = (RichTextBox)Sender;
             Controls.Remove(Control);
         }
 
-        private void Options_Click(object Sender, EventArgs Event)
+        private void Options_Click(object Sender, EventArgs E)
         {
             Dictionary<string, Type> FormMap = new()
             {
@@ -167,24 +166,24 @@ namespace Recipsio
         {
 
         }
-        private void Add_Recipe_Ingredient_Click(object Sender, EventArgs Event)
+        private void Add_Recipe_Ingredient_Click(object Sender, EventArgs E)
         {
             RecipeIngredientForm AIF = new(this, Manager);
             AIF.ShowDialog(this);
         }
-        private void Remove_Ingredient_Click(object Sender, EventArgs Event)
+        private void Remove_Ingredient_Click(object Sender, EventArgs E)
         {
             if (RecipeIngredients.SelectedItem != null)
             {
                 RecipeIngredients.Items.Remove(RecipeIngredients.SelectedItem);
             }
         }
-        private void Add_Recipe_Description_Click(object sender, EventArgs e)
+        private void Add_Recipe_Description_Click(object Sender, EventArgs e)
         {
             RecipeDirectionForm RDF = new(this, Manager);
             RDF.ShowDialog(this);
         }
-        private void Remove_Recipe_Description_Click(object sender, EventArgs e)
+        private void Remove_Recipe_Description_Click(object Sender, EventArgs e)
         {
             if (RecipeDirections.SelectedItem != null)
             {

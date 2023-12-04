@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
@@ -25,14 +26,14 @@ namespace Recipsio
                 IngredientChoice.Items.Add(Ingredient.Name);
             }
         }
-        private void Form_KeyDown(object Sender, KeyEventArgs KeyEvent)
+        private void Form_KeyDown(object Sender, KeyEventArgs KE)
         {
-            if (KeyEvent.KeyCode == Keys.Escape)
+            if (KE.KeyCode == Keys.Escape)
             {
                 Close();
             }
         }
-        private void Submit_Recipe_Ingredient_Click(object sender, System.EventArgs e)
+        private void Submit_Recipe_Ingredient_Click(object Sender, EventArgs E)
         {
             string ErrorMessage = TB.Is_Valid_Ingredient(this);
             if (ErrorMessage == "")

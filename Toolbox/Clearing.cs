@@ -4,9 +4,9 @@ namespace Recipsio
 {
    public partial class Toolbox
     {
-        public void Clear_Times(GroupBox GroupBox)
+        public void Clear_Times(GroupBox GB)
         {
-            foreach (Control Control in GroupBox.Controls)
+            foreach (Control Control in GB.Controls)
             {
                 Label TimeLabel = (Label)Control;
                 Control.Text = $"0 {TimeLabel.Tag}";
