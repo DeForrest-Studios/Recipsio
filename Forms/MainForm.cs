@@ -167,7 +167,7 @@ namespace Recipsio
         {
 
         }
-        private void Add_Ingredient_Click(object Sender, EventArgs Event)
+        private void Add_Recipe_Ingredient_Click(object Sender, EventArgs Event)
         {
             RecipeIngredientForm AIF = new(this, Manager);
             AIF.ShowDialog(this);
@@ -177,6 +177,18 @@ namespace Recipsio
             if (RecipeIngredients.SelectedItem != null)
             {
                 RecipeIngredients.Items.Remove(RecipeIngredients.SelectedItem);
+            }
+        }
+        private void Add_Recipe_Description_Click(object sender, EventArgs e)
+        {
+            RecipeDirectionForm RDF = new(this, Manager);
+            RDF.ShowDialog(this);
+        }
+        private void Remove_Recipe_Description_Click(object sender, EventArgs e)
+        {
+            if (RecipeDirections.SelectedItem != null)
+            {
+                RecipeDirections.Items.Remove(RecipeDirections.SelectedItem);
             }
         }
     }

@@ -16,7 +16,8 @@ namespace Recipsio
                    $":PrepTime\n{MF.PrepDays.Text.Split(" ")[0]}:{MF.PrepHours.Text.Split(" ")[0]}:{MF.PrepMinutes.Text.Split(" ")[0]}\n" +
                    $":CookTime\n{MF.CookDays.Text.Split(" ")[0]}:{MF.CookHours.Text.Split(" ")[0]}:{MF.CookMinutes.Text.Split(" ")[0]}\n" +
                    $":Description\n{MF.RecipeDescription.Text}\n" +
-                   $":Ingredients\n{string.Join("|", MF.RecipeIngredients.Items.Cast<string>())}";
+                   $":Ingredients\n{string.Join("|", MF.RecipeIngredients.Items.Cast<string>())}\n" +
+                   $":Directions\n{string.Join("|", MF.RecipeDirections.Items.Cast<string>())}";
         }
         public void Load_Recipe(string CurrentRecipe)
         {
@@ -66,6 +67,14 @@ namespace Recipsio
                     foreach (string Ingredient in Ingredients)
                     {
                         MF.RecipeIngredients.Items.Add(Ingredient);
+                    }
+                }
+                else if (DataState == "Directions")
+                {
+                    List<string> Directions = Lines[Index].Split('|').ToList();
+                    foreach (string Direction in Directions)
+                    {
+                        MF.RecipeDirections.Items.Add(Direction);
                     }
                 }
             }

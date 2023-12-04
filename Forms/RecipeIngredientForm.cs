@@ -32,7 +32,7 @@ namespace Recipsio
                 Close();
             }
         }
-        private void Add_Recipe_Ingredient_Click(object sender, System.EventArgs e)
+        private void Submit_Recipe_Ingredient_Click(object sender, System.EventArgs e)
         {
             string ErrorMessage = TB.Is_Valid_Ingredient(this);
             if (ErrorMessage == "")
@@ -45,8 +45,6 @@ namespace Recipsio
             {
                 TB.Send_Message_Box($"Required fields: {ErrorMessage}", "Invalid Ingredient");
             }
-            
-
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecipeIngredientForm));
-            button1 = new System.Windows.Forms.Button();
+            SubmitIngredient = new System.Windows.Forms.Button();
             IngredientChoice = new System.Windows.Forms.ComboBox();
             MeasurementChoice = new System.Windows.Forms.ComboBox();
             MeasurementAmount = new System.Windows.Forms.TextBox();
@@ -38,16 +38,16 @@
             IngredientLabel = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
-            // button1
+            // SubmitIngredient
             // 
-            button1.Location = new System.Drawing.Point(138, 74);
-            button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(88, 25);
-            button1.TabIndex = 0;
-            button1.Text = "Add";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += Add_Recipe_Ingredient_Click;
+            SubmitIngredient.Location = new System.Drawing.Point(138, 74);
+            SubmitIngredient.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            SubmitIngredient.Name = "SubmitIngredient";
+            SubmitIngredient.Size = new System.Drawing.Size(88, 25);
+            SubmitIngredient.TabIndex = 0;
+            SubmitIngredient.Text = "Submit";
+            SubmitIngredient.UseVisualStyleBackColor = true;
+            SubmitIngredient.Click += Submit_Recipe_Ingredient_Click;
             // 
             // IngredientChoice
             // 
@@ -104,7 +104,7 @@
             IngredientLabel.TabIndex = 6;
             IngredientLabel.Text = "Ingredient";
             // 
-            // AddRecipeIngredientForm
+            // RecipeIngredientForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,12 +117,12 @@
             Controls.Add(MeasurementAmount);
             Controls.Add(MeasurementChoice);
             Controls.Add(IngredientChoice);
-            Controls.Add(button1);
+            Controls.Add(SubmitIngredient);
             Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            Name = "AddRecipeIngredientForm";
+            Name = "RecipeIngredientForm";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Add Ingredient";
             KeyDown += Form_KeyDown;
@@ -132,7 +132,7 @@
 
         #endregion
 
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button SubmitIngredient;
         public System.Windows.Forms.ComboBox IngredientChoice;
         public System.Windows.Forms.ComboBox MeasurementChoice;
         public System.Windows.Forms.TextBox MeasurementAmount;
