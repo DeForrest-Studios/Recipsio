@@ -369,7 +369,7 @@
             // RecipeDescription
             // 
             RecipeDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            RecipeDescription.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            RecipeDescription.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             RecipeDescription.Location = new System.Drawing.Point(97, 3);
             RecipeDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             RecipeDescription.Name = "RecipeDescription";
@@ -431,9 +431,9 @@
             // RecipeIngredients
             // 
             RecipeIngredients.Dock = System.Windows.Forms.DockStyle.Fill;
-            RecipeIngredients.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            RecipeIngredients.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             RecipeIngredients.FormattingEnabled = true;
-            RecipeIngredients.ItemHeight = 16;
+            RecipeIngredients.ItemHeight = 15;
             RecipeIngredients.Location = new System.Drawing.Point(98, 194);
             RecipeIngredients.Name = "RecipeIngredients";
             RecipeIngredients.Size = new System.Drawing.Size(835, 185);
@@ -443,9 +443,9 @@
             // RecipeDirections
             // 
             RecipeDirections.Dock = System.Windows.Forms.DockStyle.Fill;
-            RecipeDirections.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            RecipeDirections.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             RecipeDirections.FormattingEnabled = true;
-            RecipeDirections.ItemHeight = 16;
+            RecipeDirections.ItemHeight = 15;
             RecipeDirections.Location = new System.Drawing.Point(98, 385);
             RecipeDirections.Name = "RecipeDirections";
             RecipeDirections.Size = new System.Drawing.Size(835, 186);

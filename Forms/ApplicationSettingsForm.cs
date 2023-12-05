@@ -21,5 +21,15 @@ namespace Recipsio
                 Close();
             }
         }
+
+        private void Load_Application_Settings(object sender, System.EventArgs e)
+        {
+        }
+        private void Load_Editor_Settings(object sender, System.EventArgs e)
+        {
+            EditorSettings ES = new(MF, TB);
+            SettingsLayout.Controls.Add(ES, 1, 0);
+            SettingsLayout.SetRowSpan(ES, SettingsLayout.RowCount);
+        }
     }
 }
