@@ -59,7 +59,7 @@ namespace Recipsio
 
             if (ME.Button == MouseButtons.Left)
             {
-                GroupBox LabelGroupBox = (GroupBox)Label.Parent;
+                TableLayoutPanel LabelGroupBox = (TableLayoutPanel)Label.Parent;
                 RichTextBox Input = new();
 
                 Input.KeyDown += new KeyEventHandler(Input_Time_Key_Down);

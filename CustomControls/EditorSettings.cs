@@ -26,10 +26,7 @@ namespace Recipsio
         private void Font_Size_Changed(object sender, EventArgs e)
         {
             List<string> Exclusions = new()
-            { "DescriptionLabel",
-              "IngredientsLabel",
-              "DirectionsLabel",
-              "MainToolStrip",
+            { "MainToolStrip",
             };
 
             MF.Font = new Font("Arial", (float)FontSizeControl.Value);

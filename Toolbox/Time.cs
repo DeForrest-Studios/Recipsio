@@ -5,11 +5,11 @@ namespace Recipsio
 {
     public partial class Toolbox
     {
-        public TimeSpan Update_TimeSpan(GroupBox TimeGroupBox)
+        public TimeSpan Update_TimeSpan(TableLayoutPanel TimeGroupBox)
         {
-            Label DaysLabel = (Label)TimeGroupBox.Controls[0];
-            Label HoursLabel = (Label)TimeGroupBox.Controls[1];
-            Label MinutesLabel = (Label)TimeGroupBox.Controls[2];
+            Label DaysLabel = (Label)TimeGroupBox.GetControlFromPosition(0, 0);
+            Label HoursLabel = (Label)TimeGroupBox.GetControlFromPosition(1, 0);
+            Label MinutesLabel = (Label)TimeGroupBox.GetControlFromPosition(2, 0);
 
             int Days = Convert.ToInt32(DaysLabel.Text.Split(" ")[0]);
             int Hours = Convert.ToInt32(HoursLabel.Text.Split(" ")[0]);
@@ -48,8 +48,8 @@ namespace Recipsio
         }
         public void Update_Times()
         {
-            TimeSpan PrepTimeSpan = Update_TimeSpan(MF.PrepTime);
-            TimeSpan CookTimeSpan = Update_TimeSpan(MF.CookTime);
+            TimeSpan PrepTimeSpan = Update_TimeSpan(MF.PrepTimeLayout);
+            TimeSpan CookTimeSpan = Update_TimeSpan(MF.CookTimeLayout);
             TimeSpan TotalTimeSpan = PrepTimeSpan + CookTimeSpan;
             MF.TotalTimeValue.Text = Format_Total_Time(TotalTimeSpan);
         }

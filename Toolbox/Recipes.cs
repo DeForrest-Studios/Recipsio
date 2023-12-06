@@ -13,7 +13,7 @@ namespace Recipsio
         {
             return $":Name\n{MF.RecipeName.Text}\n" +
                    $":Author\n{MF.RecipeAuthor.Text}\n" +
-                   $":PrepTime\n{MF.PrepDays.Text.Split(" ")[0]}:{MF.PrepHours.Text.Split(" ")[0]}:{MF.PrepMinutes.Text.Split(" ")[0]}\n" +
+                   $":PrepTime\n{MF.PrepHours.Text.Split(" ")[0]}:{MF.PrepMinutes.Text.Split(" ")[0]}:{MF.PrepDays.Text.Split(" ")[0]}\n" +
                    $":CookTime\n{MF.CookDays.Text.Split(" ")[0]}:{MF.CookHours.Text.Split(" ")[0]}:{MF.CookMinutes.Text.Split(" ")[0]}\n" +
                    $":Description\n{MF.RecipeDescription.Text}\n" +
                    $":Ingredients\n{string.Join("|", MF.RecipeIngredients.Items.Cast<string>())}\n" +
@@ -45,9 +45,9 @@ namespace Recipsio
                 else if (DataState == "PrepTime")
                 {
                     string[] Times = Lines[Index].Split(":");
-                    MF.PrepDays.Text = $"{Times[0]} Days";
-                    MF.PrepHours.Text = $"{Times[1]} Hours";
-                    MF.PrepMinutes.Text = $"{Times[2]} Minutes";
+                    MF.PrepHours.Text = $"{Times[0]} Days";
+                    MF.PrepMinutes.Text = $"{Times[1]} Hours";
+                    MF.PrepDays.Text = $"{Times[2]} Minutes";
                 }
                 else if (DataState == "CookTime")
                 {
