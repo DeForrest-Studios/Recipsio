@@ -110,9 +110,9 @@
             FormLayout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             FormLayout.Name = "FormLayout";
             FormLayout.RowCount = 4;
-            FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             FormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             FormLayout.Size = new System.Drawing.Size(1191, 708);
             FormLayout.TabIndex = 0;
@@ -137,7 +137,7 @@
             FormLayout.SetRowSpan(RecipeHeaderLayout, 2);
             RecipeHeaderLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.5454559F));
             RecipeHeaderLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.4545441F));
-            RecipeHeaderLayout.Size = new System.Drawing.Size(807, 94);
+            RecipeHeaderLayout.Size = new System.Drawing.Size(807, 102);
             RecipeHeaderLayout.TabIndex = 1;
             RecipeHeaderLayout.MouseClick += Control_Mouse_Click;
             // 
@@ -149,7 +149,7 @@
             AuthorGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             AuthorGroupBox.Name = "AuthorGroupBox";
             AuthorGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            AuthorGroupBox.Size = new System.Drawing.Size(262, 45);
+            AuthorGroupBox.Size = new System.Drawing.Size(262, 49);
             AuthorGroupBox.TabIndex = 22;
             AuthorGroupBox.TabStop = false;
             AuthorGroupBox.Text = "Author";
@@ -161,7 +161,7 @@
             RecipeAuthor.Location = new System.Drawing.Point(8, 16);
             RecipeAuthor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             RecipeAuthor.Name = "RecipeAuthor";
-            RecipeAuthor.Size = new System.Drawing.Size(246, 23);
+            RecipeAuthor.Size = new System.Drawing.Size(246, 27);
             RecipeAuthor.TabIndex = 0;
             RecipeAuthor.Tag = "Author";
             RecipeAuthor.Text = "";
@@ -172,11 +172,11 @@
             CookTime.Controls.Add(CookDays);
             CookTime.Controls.Add(CookHours);
             CookTime.Controls.Add(CookMinutes);
-            CookTime.Location = new System.Drawing.Point(270, 54);
+            CookTime.Location = new System.Drawing.Point(270, 58);
             CookTime.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             CookTime.Name = "CookTime";
             CookTime.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            CookTime.Size = new System.Drawing.Size(265, 37);
+            CookTime.Size = new System.Drawing.Size(265, 41);
             CookTime.TabIndex = 19;
             CookTime.TabStop = false;
             CookTime.Tag = "Cook Time";
@@ -186,8 +186,7 @@
             // CookDays
             // 
             CookDays.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            CookDays.AutoSize = true;
-            CookDays.Location = new System.Drawing.Point(84, 17);
+            CookDays.Location = new System.Drawing.Point(84, 21);
             CookDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             CookDays.Name = "CookDays";
             CookDays.Size = new System.Drawing.Size(45, 15);
@@ -199,8 +198,7 @@
             // CookHours
             // 
             CookHours.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            CookHours.AutoSize = true;
-            CookHours.Location = new System.Drawing.Point(139, 17);
+            CookHours.Location = new System.Drawing.Point(139, 21);
             CookHours.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             CookHours.Name = "CookHours";
             CookHours.Size = new System.Drawing.Size(51, 15);
@@ -212,8 +210,7 @@
             // CookMinutes
             // 
             CookMinutes.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            CookMinutes.AutoSize = true;
-            CookMinutes.Location = new System.Drawing.Point(199, 17);
+            CookMinutes.Location = new System.Drawing.Point(199, 21);
             CookMinutes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             CookMinutes.Name = "CookMinutes";
             CookMinutes.Size = new System.Drawing.Size(60, 15);
@@ -226,11 +223,11 @@
             // 
             TotalTime.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             TotalTime.Controls.Add(TotalTimeValue);
-            TotalTime.Location = new System.Drawing.Point(541, 54);
+            TotalTime.Location = new System.Drawing.Point(541, 58);
             TotalTime.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TotalTime.Name = "TotalTime";
             TotalTime.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TotalTime.Size = new System.Drawing.Size(262, 37);
+            TotalTime.Size = new System.Drawing.Size(262, 41);
             TotalTime.TabIndex = 20;
             TotalTime.TabStop = false;
             TotalTime.Text = "Total Time";
@@ -238,12 +235,11 @@
             // 
             // TotalTimeValue
             // 
-            TotalTimeValue.AutoSize = true;
             TotalTimeValue.Dock = System.Windows.Forms.DockStyle.Right;
             TotalTimeValue.Location = new System.Drawing.Point(107, 17);
             TotalTimeValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             TotalTimeValue.Name = "TotalTimeValue";
-            TotalTimeValue.Size = new System.Drawing.Size(151, 15);
+            TotalTimeValue.Size = new System.Drawing.Size(151, 21);
             TotalTimeValue.TabIndex = 1;
             TotalTimeValue.Text = "0 Days 0 Hours 0  Minutes";
             // 
@@ -256,7 +252,7 @@
             NameGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             NameGroupBox.Name = "NameGroupBox";
             NameGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            NameGroupBox.Size = new System.Drawing.Size(529, 45);
+            NameGroupBox.Size = new System.Drawing.Size(529, 49);
             NameGroupBox.TabIndex = 2;
             NameGroupBox.TabStop = false;
             NameGroupBox.Text = "Name";
@@ -269,7 +265,7 @@
             RecipeName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             RecipeName.Multiline = false;
             RecipeName.Name = "RecipeName";
-            RecipeName.Size = new System.Drawing.Size(513, 23);
+            RecipeName.Size = new System.Drawing.Size(513, 27);
             RecipeName.TabIndex = 0;
             RecipeName.Tag = "Name";
             RecipeName.Text = "";
@@ -280,11 +276,11 @@
             PrepTime.Controls.Add(PrepDays);
             PrepTime.Controls.Add(PrepHours);
             PrepTime.Controls.Add(PrepMinutes);
-            PrepTime.Location = new System.Drawing.Point(2, 54);
+            PrepTime.Location = new System.Drawing.Point(2, 58);
             PrepTime.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             PrepTime.Name = "PrepTime";
             PrepTime.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            PrepTime.Size = new System.Drawing.Size(264, 37);
+            PrepTime.Size = new System.Drawing.Size(264, 41);
             PrepTime.TabIndex = 1;
             PrepTime.TabStop = false;
             PrepTime.Tag = "Preparation Time";
@@ -294,8 +290,7 @@
             // PrepDays
             // 
             PrepDays.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            PrepDays.AutoSize = true;
-            PrepDays.Location = new System.Drawing.Point(88, 17);
+            PrepDays.Location = new System.Drawing.Point(88, 21);
             PrepDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             PrepDays.Name = "PrepDays";
             PrepDays.Size = new System.Drawing.Size(45, 15);
@@ -307,8 +302,7 @@
             // PrepHours
             // 
             PrepHours.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            PrepHours.AutoSize = true;
-            PrepHours.Location = new System.Drawing.Point(143, 17);
+            PrepHours.Location = new System.Drawing.Point(143, 21);
             PrepHours.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             PrepHours.Name = "PrepHours";
             PrepHours.Size = new System.Drawing.Size(51, 15);
@@ -320,8 +314,7 @@
             // PrepMinutes
             // 
             PrepMinutes.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            PrepMinutes.AutoSize = true;
-            PrepMinutes.Location = new System.Drawing.Point(202, 17);
+            PrepMinutes.Location = new System.Drawing.Point(202, 21);
             PrepMinutes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             PrepMinutes.Name = "PrepMinutes";
             PrepMinutes.Size = new System.Drawing.Size(60, 15);
@@ -332,7 +325,6 @@
             // 
             // RecipeInformationLayout
             // 
-            RecipeInformationLayout.AutoSize = true;
             RecipeInformationLayout.ColumnCount = 2;
             FormLayout.SetColumnSpan(RecipeInformationLayout, 2);
             RecipeInformationLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
@@ -357,7 +349,6 @@
             // 
             // DescriptionLabel
             // 
-            DescriptionLabel.AutoSize = true;
             DescriptionLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             DescriptionLabel.Location = new System.Drawing.Point(2, 0);
             DescriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -397,7 +388,6 @@
             // 
             // IngredientsLabel
             // 
-            IngredientsLabel.AutoSize = true;
             IngredientsLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             IngredientsLabel.Location = new System.Drawing.Point(2, 0);
             IngredientsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -470,7 +460,6 @@
             // 
             // DirectionsLabel
             // 
-            DirectionsLabel.AutoSize = true;
             DirectionsLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             DirectionsLabel.Location = new System.Drawing.Point(2, 0);
             DirectionsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -509,37 +498,41 @@
             MainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { ApplicationActions, MainToolstripSeparator, RecipeActions, toolStripSeparator1 });
             MainToolStrip.Location = new System.Drawing.Point(0, 0);
             MainToolStrip.Name = "MainToolStrip";
-            MainToolStrip.Size = new System.Drawing.Size(247, 20);
+            MainToolStrip.Size = new System.Drawing.Size(247, 28);
             MainToolStrip.TabIndex = 4;
             MainToolStrip.Text = "toolStrip1";
             // 
             // ApplicationActions
             // 
+            ApplicationActions.AutoSize = false;
             ApplicationActions.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             ApplicationActions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { NewRecipeAction, SaveRecipeAction, DeleteRecipeAction, ApplicationActionsSeparator1, ApplicationIngredientsAction, ApplicationTagsAction, ApplicationActionsSeparator2, SettingsAction, HelpAction });
             ApplicationActions.ImageTransparentColor = System.Drawing.Color.Magenta;
             ApplicationActions.Name = "ApplicationActions";
-            ApplicationActions.Size = new System.Drawing.Size(81, 17);
+            ApplicationActions.Size = new System.Drawing.Size(81, 25);
             ApplicationActions.Text = "Application";
             // 
             // NewRecipeAction
             // 
+            NewRecipeAction.AutoSize = false;
             NewRecipeAction.Name = "NewRecipeAction";
-            NewRecipeAction.Size = new System.Drawing.Size(145, 22);
+            NewRecipeAction.Size = new System.Drawing.Size(180, 22);
             NewRecipeAction.Text = "New Recipe";
             NewRecipeAction.Click += Create_New_Recipe_Click;
             // 
             // SaveRecipeAction
             // 
+            SaveRecipeAction.AutoSize = false;
             SaveRecipeAction.Name = "SaveRecipeAction";
-            SaveRecipeAction.Size = new System.Drawing.Size(145, 22);
+            SaveRecipeAction.Size = new System.Drawing.Size(180, 22);
             SaveRecipeAction.Text = "Save Recipe";
             SaveRecipeAction.Click += Save_Recipe_Click;
             // 
             // DeleteRecipeAction
             // 
+            DeleteRecipeAction.AutoSize = false;
             DeleteRecipeAction.Name = "DeleteRecipeAction";
-            DeleteRecipeAction.Size = new System.Drawing.Size(145, 22);
+            DeleteRecipeAction.Size = new System.Drawing.Size(180, 22);
             DeleteRecipeAction.Text = "Delete Recipe";
             DeleteRecipeAction.Click += Delete_Recipe_Click;
             // 
@@ -584,7 +577,7 @@
             // MainToolstripSeparator
             // 
             MainToolstripSeparator.Name = "MainToolstripSeparator";
-            MainToolstripSeparator.Size = new System.Drawing.Size(6, 20);
+            MainToolstripSeparator.Size = new System.Drawing.Size(6, 28);
             // 
             // RecipeActions
             // 
@@ -592,7 +585,7 @@
             RecipeActions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { RecipeTagsAction, RecipeImagesAction, ExportShoppingListAction });
             RecipeActions.ImageTransparentColor = System.Drawing.Color.Magenta;
             RecipeActions.Name = "RecipeActions";
-            RecipeActions.Size = new System.Drawing.Size(55, 17);
+            RecipeActions.Size = new System.Drawing.Size(55, 25);
             RecipeActions.Text = "Recipe";
             // 
             // RecipeTagsAction
@@ -616,7 +609,7 @@
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new System.Drawing.Size(6, 20);
+            toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
             // RecipeIcon
             // 
@@ -639,14 +632,14 @@
             RecipeListLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             RecipeListLayout.Controls.Add(RecipeList, 0, 1);
             RecipeListLayout.Controls.Add(Search, 0, 0);
-            RecipeListLayout.Location = new System.Drawing.Point(5, 20);
+            RecipeListLayout.Location = new System.Drawing.Point(5, 28);
             RecipeListLayout.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             RecipeListLayout.Name = "RecipeListLayout";
             RecipeListLayout.RowCount = 2;
             FormLayout.SetRowSpan(RecipeListLayout, 3);
             RecipeListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             RecipeListLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            RecipeListLayout.Size = new System.Drawing.Size(242, 683);
+            RecipeListLayout.Size = new System.Drawing.Size(242, 675);
             RecipeListLayout.TabIndex = 3;
             // 
             // RecipeList
@@ -658,7 +651,7 @@
             RecipeList.Location = new System.Drawing.Point(0, 29);
             RecipeList.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             RecipeList.Name = "RecipeList";
-            RecipeList.Size = new System.Drawing.Size(242, 654);
+            RecipeList.Size = new System.Drawing.Size(242, 646);
             RecipeList.TabIndex = 1;
             RecipeList.TabStop = false;
             RecipeList.SelectedValueChanged += RecipeList_Selected_Value_Changed;
@@ -680,7 +673,6 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            AutoSize = true;
             BackColor = System.Drawing.Color.FromArgb(252, 245, 229);
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             ClientSize = new System.Drawing.Size(1191, 708);
@@ -699,18 +691,12 @@
             RecipeHeaderLayout.ResumeLayout(false);
             AuthorGroupBox.ResumeLayout(false);
             CookTime.ResumeLayout(false);
-            CookTime.PerformLayout();
             TotalTime.ResumeLayout(false);
-            TotalTime.PerformLayout();
             NameGroupBox.ResumeLayout(false);
             PrepTime.ResumeLayout(false);
-            PrepTime.PerformLayout();
             RecipeInformationLayout.ResumeLayout(false);
-            RecipeInformationLayout.PerformLayout();
             IngredientControlsLayout.ResumeLayout(false);
-            IngredientControlsLayout.PerformLayout();
             DirectionsControlsLayout.ResumeLayout(false);
-            DirectionsControlsLayout.PerformLayout();
             MainToolStrip.ResumeLayout(false);
             MainToolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)RecipeIcon).EndInit();
@@ -788,9 +774,8 @@
         public System.Windows.Forms.Button AddDirection;
         public System.Windows.Forms.Button RemoveDirection;
         public System.Windows.Forms.ListBox RecipeDirections;
-
-        public System.Windows.Forms.PictureBox RecipeIcon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        public System.Windows.Forms.PictureBox RecipeIcon;
     }
 }
 

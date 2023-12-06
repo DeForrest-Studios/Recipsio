@@ -9,29 +9,36 @@ namespace Recipsio
     public partial class MainForm : Form
     {
         public string? CurrentRecipe;
-        public Toolbox Manager;
+        public Toolbox TB;
 
         public MainForm()
         {
+            TB = new Toolbox(this);
+
+            foreach (Control C in TB.Get_All_Controls(this, null!))
+            {
+                C.AutoSize = true;
+            }
+
             InitializeComponent();
-            Manager = new Toolbox(this);
-            Manager.Generate_User_Directories();
-            Manager.Load_Recipes(ref RecipeList);
-            Manager.Load_Ingredients();
+            TB.Generate_User_Directories();
+            TB.Load_Recipes(ref RecipeList);
+            TB.Load_Ingredients();
             KeyPreview = true;
+
         }
 
         private void Create_New_Recipe_Click(object Sender, EventArgs E)
         {
-            Manager.Clear_Content_Boxes();
+            TB.Clear_Content_Boxes();
             CurrentRecipe = "";
             RecipeList.SelectedItem = null;
         }
         private void Save_Recipe_Click(object Sender, EventArgs E)
         {
-            if (Manager.Is_Valid_Recipe())
+            if (TB.Is_Valid_Recipe())
             {
-                if (Manager.Save_Recipe(RecipeName.Text, this) == "New")
+                if (TB.Save_Recipe(RecipeName.Text, this) == "New")
                 {
                     RecipeList.Items.Add(RecipeName.Text);
                 }
@@ -41,8 +48,8 @@ namespace Recipsio
         {
             if (CurrentRecipe == null) { return; }
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
-            Manager.Delete_Recipe(CurrentRecipe);
-            Manager.Clear_Content_Boxes();
+            TB.Delete_Recipe(CurrentRecipe);
+            TB.Clear_Content_Boxes();
             RecipeList.Items.Remove(CurrentRecipe);
             RecipeList.SelectedItem = null;
         }
@@ -87,11 +94,11 @@ namespace Recipsio
         {
             if (RecipeList.SelectedItem == null) return;
 
-            Manager.Clear_Content_Boxes();
+            TB.Clear_Content_Boxes();
 
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
 
-            Manager.Load_Recipe(CurrentRecipe);
+            TB.Load_Recipe(CurrentRecipe);
         }
         private void RichTextBox_Key_Down(object Sender, KeyEventArgs KE)
         {
@@ -119,7 +126,7 @@ namespace Recipsio
                 Input = (RichTextBox)Sender!;
                 InputTimeLabel = (Label)Controls.Find(Input.Tag.ToString(), true)[0];
                 InputTimeLabel.Text = $"{Input.Text} {InputTimeLabel.Tag}";
-                Manager.Update_Times();
+                TB.Update_Times();
                 Controls.Remove(Input);
 
             }
@@ -143,7 +150,7 @@ namespace Recipsio
 
             ToolStripItem ItemClicked = (ToolStripItem)Sender;
             _ = FormMap.TryGetValue(ItemClicked.Text, out Type? FormType);
-            Form NewForm = (Form)Activator.CreateInstance(FormType!, this, Manager)!;
+            Form NewForm = (Form)Activator.CreateInstance(FormType!, this, TB)!;
             NewForm.ShowDialog();
         }
         private void Search_Leave(object Sender, EventArgs E)
@@ -168,7 +175,7 @@ namespace Recipsio
         }
         private void Add_Recipe_Ingredient_Click(object Sender, EventArgs E)
         {
-            RecipeIngredientForm AIF = new(this, Manager);
+            RecipeIngredientForm AIF = new(this, TB);
             AIF.ShowDialog(this);
         }
         private void Remove_Ingredient_Click(object Sender, EventArgs E)
@@ -180,7 +187,7 @@ namespace Recipsio
         }
         private void Add_Recipe_Description_Click(object Sender, EventArgs e)
         {
-            RecipeDirectionForm RDF = new(this, Manager);
+            RecipeDirectionForm RDF = new(this, TB);
             RDF.ShowDialog(this);
         }
         private void Remove_Recipe_Description_Click(object Sender, EventArgs e)
@@ -190,11 +197,5 @@ namespace Recipsio
                 RecipeDirections.Items.Remove(RecipeDirections.SelectedItem);
             }
         }
-    }
-    public partial class Toolbox
-    {
-        public MainForm MF;
-        public Toolbox(MainForm MFPassed) => MF = MFPassed;
-
     }
 }
