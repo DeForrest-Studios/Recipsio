@@ -31,9 +31,9 @@ namespace Recipsio
                 MF.Header.RecipeAuthor,
                 MF.Header.PrepTimeBox,
                 MF.Header.CookTimeBox,
-                MF.RecipeDescription,
-                MF.RecipeIngredients,
-                MF.RecipeDirections,
+                MF.Information.RecipeDescription,
+                MF.Information.RecipeIngredients,
+                MF.Information.RecipeDirections,
             };
 
             List<string> EmptyFieldTags = new();

@@ -20,38 +20,17 @@ namespace Recipsio
             {
                 C.AutoSize = true;
             }
+            Header.MF = this;
             Header.TB = TB;
+            Information.MF = this;
+            Information.TB = TB;
+            Tools.MF = this;
+            Tools.TB = TB;
             TB.Generate_User_Directories();
             TB.Load_Recipes(ref RecipeList);
             TB.Load_Ingredients();
             KeyPreview = true;
 
-        }
-
-        private void Create_New_Recipe_Click(object Sender, EventArgs E)
-        {
-            TB.Clear_Content_Boxes();
-            CurrentRecipe = "";
-            RecipeList.SelectedItem = null;
-        }
-        private void Save_Recipe_Click(object Sender, EventArgs E)
-        {
-            //if (TB.Is_Valid_Recipe())
-            //{
-            //    if (TB.Save_Recipe(RecipeName.Text, this) == "New")
-            //    {
-            //        RecipeList.Items.Add(RecipeName.Text);
-            //    }
-            //}
-        }
-        private void Delete_Recipe_Click(object Sender, EventArgs E)
-        {
-            if (CurrentRecipe == null) { return; }
-            CurrentRecipe = RecipeList.SelectedItem.ToString()!;
-            TB.Delete_Recipe(CurrentRecipe);
-            TB.Clear_Content_Boxes();
-            RecipeList.Items.Remove(CurrentRecipe);
-            RecipeList.SelectedItem = null;
         }
         private void Control_Mouse_Click(object Sender, MouseEventArgs ME)
         {
@@ -88,23 +67,6 @@ namespace Recipsio
                 Close();
             }
         }
-
-        private void Options_Click(object Sender, EventArgs E)
-        {
-            Dictionary<string, Type> FormMap = new()
-            {
-                { "Images", typeof(ApplicationImagesForm) },
-                { "Tags", typeof(ApplicationTagsForm) },
-                { "Ingredients", typeof(ApplicationIngredientsForm) },
-                { "Settings", typeof(ApplicationSettingsForm) },
-                { "Help", typeof(ApplicationHelpForm) },
-            };
-
-            ToolStripItem ItemClicked = (ToolStripItem)Sender;
-            _ = FormMap.TryGetValue(ItemClicked.Text, out Type? FormType);
-            Form NewForm = (Form)Activator.CreateInstance(FormType!, this, TB)!;
-            NewForm.ShowDialog();
-        }
         private void Search_Leave(object Sender, EventArgs E)
         {
             if (Search.Text == "")
@@ -124,30 +86,6 @@ namespace Recipsio
         private void Search_Text_Changed(object Sender, EventArgs E)
         {
 
-        }
-        private void Add_Recipe_Ingredient_Click(object Sender, EventArgs E)
-        {
-            RecipeIngredientForm AIF = new(this, TB);
-            AIF.ShowDialog(this);
-        }
-        private void Remove_Ingredient_Click(object Sender, EventArgs E)
-        {
-            if (RecipeIngredients.SelectedItem != null)
-            {
-                RecipeIngredients.Items.Remove(RecipeIngredients.SelectedItem);
-            }
-        }
-        private void Add_Recipe_Description_Click(object Sender, EventArgs e)
-        {
-            RecipeDirectionForm RDF = new(this, TB);
-            RDF.ShowDialog(this);
-        }
-        private void Remove_Recipe_Description_Click(object Sender, EventArgs e)
-        {
-            if (RecipeDirections.SelectedItem != null)
-            {
-                RecipeDirections.Items.Remove(RecipeDirections.SelectedItem);
-            }
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Recipsio
             if (ErrorMessage == "")
             {
                 Ingredient ChosenIngredient = TB.Ingredients[IngredientChoice.SelectedItem.ToString()!];
-                MF.RecipeIngredients.Items.Add($"{MeasurementAmount.Text} {MeasurementChoice.Text} ~ {ChosenIngredient.Name}");
+                MF.Information.RecipeIngredients.Items.Add($"{MeasurementAmount.Text} {MeasurementChoice.Text} ~ {ChosenIngredient.Name}");
                 Close();
             }
             else

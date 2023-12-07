@@ -27,7 +27,7 @@ namespace Recipsio
         {
             if (RecipeDirection.Text != "")
             {
-                MF.RecipeDirections.Items.Add(RecipeDirection.Text);
+                MF.Information.RecipeDirections.Items.Add(RecipeDirection.Text);
                 Close();
             }
             else
