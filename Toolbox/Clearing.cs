@@ -14,11 +14,11 @@ namespace Recipsio
         }
         public void Clear_Content_Boxes()
         {
-            MF.RecipeName.Text = "";
-            MF.RecipeAuthor.Text = "";
-            Clear_Times(MF.PrepTime);
-            Clear_Times(MF.CookTime);
-            MF.TotalTimeValue.Text = "0 Days 0 Hours 0 Minutes";
+            MF.Header.RecipeName.Text = "";
+            MF.Header.RecipeAuthor.Text = "";
+            Clear_Times(MF.Header.PrepTimeBox);
+            Clear_Times(MF.Header.CookTimeBox);
+            MF.Header.TotalTimeValue.Text = "0 Days 0 Hours 0 Minutes";
             MF.RecipeDescription.Text = "";
             MF.RecipeIngredients.Items.Clear();
         }

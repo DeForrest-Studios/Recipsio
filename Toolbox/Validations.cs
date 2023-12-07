@@ -1,5 +1,4 @@
-﻿using Microsoft.Identity.Client;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Recipsio
@@ -28,10 +27,10 @@ namespace Recipsio
         {
             RecipeFields = new List<dynamic>
             {
-                MF.RecipeName,
-                MF.RecipeAuthor,
-                MF.PrepTime,
-                MF.CookTime,
+                MF.Header.RecipeName,
+                MF.Header.RecipeAuthor,
+                MF.Header.PrepTimeBox,
+                MF.Header.CookTimeBox,
                 MF.RecipeDescription,
                 MF.RecipeIngredients,
                 MF.RecipeDirections,

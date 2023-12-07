@@ -13,14 +13,14 @@ namespace Recipsio
 
         public MainForm()
         {
+            InitializeComponent();
             TB = new Toolbox(this);
 
             foreach (Control C in TB.Get_All_Controls(this, null!))
             {
                 C.AutoSize = true;
             }
-
-            InitializeComponent();
+            Header.TB = TB;
             TB.Generate_User_Directories();
             TB.Load_Recipes(ref RecipeList);
             TB.Load_Ingredients();
@@ -36,13 +36,13 @@ namespace Recipsio
         }
         private void Save_Recipe_Click(object Sender, EventArgs E)
         {
-            if (TB.Is_Valid_Recipe())
-            {
-                if (TB.Save_Recipe(RecipeName.Text, this) == "New")
-                {
-                    RecipeList.Items.Add(RecipeName.Text);
-                }
-            }
+            //if (TB.Is_Valid_Recipe())
+            //{
+            //    if (TB.Save_Recipe(RecipeName.Text, this) == "New")
+            //    {
+            //        RecipeList.Items.Add(RecipeName.Text);
+            //    }
+            //}
         }
         private void Delete_Recipe_Click(object Sender, EventArgs E)
         {
@@ -52,34 +52,6 @@ namespace Recipsio
             TB.Clear_Content_Boxes();
             RecipeList.Items.Remove(CurrentRecipe);
             RecipeList.SelectedItem = null;
-        }
-        private void Time_Mouse_Click(object Sender, MouseEventArgs ME)
-        {
-            Label Label = (Label)Sender;
-
-            if (ME.Button == MouseButtons.Left)
-            {
-                TableLayoutPanel LabelGroupBox = (TableLayoutPanel)Label.Parent;
-                RichTextBox Input = new();
-
-                Input.KeyDown += new KeyEventHandler(Input_Time_Key_Down);
-
-                int InputX = RecipeHeaderLayout.Location.X + LabelGroupBox.Location.X + Label.Left + 16;
-                int InputY = RecipeHeaderLayout.Location.Y + LabelGroupBox.Bottom + 5;
-
-                Point InputLocation = new(InputX, InputY);
-
-                Input.Location = InputLocation;
-                Input.Multiline = false;
-                Input.Size = new(30, 20);
-                Input.Tag = Label.Name;
-                Input.Leave += Time_Leave!;
-
-                Controls.Add(Input);
-
-                Input.Focus();
-                Input.BringToFront();
-            }
         }
         private void Control_Mouse_Click(object Sender, MouseEventArgs ME)
         {
@@ -98,7 +70,7 @@ namespace Recipsio
 
             CurrentRecipe = RecipeList.SelectedItem.ToString()!;
 
-            TB.Load_Recipe(CurrentRecipe);
+            //TB.Load_Recipe(CurrentRecipe);
         }
         private void RichTextBox_Key_Down(object Sender, KeyEventArgs KE)
         {
@@ -115,26 +87,6 @@ namespace Recipsio
             {
                 Close();
             }
-        }
-        private void Input_Time_Key_Down(object? Sender, KeyEventArgs KE)
-        {
-            RichTextBox Input;
-            Label InputTimeLabel;
-            if (KE.KeyCode == Keys.Enter)
-            {
-                KE.SuppressKeyPress = true;
-                Input = (RichTextBox)Sender!;
-                InputTimeLabel = (Label)Controls.Find(Input.Tag.ToString(), true)[0];
-                InputTimeLabel.Text = $"{Input.Text} {InputTimeLabel.Tag}";
-                TB.Update_Times();
-                Controls.Remove(Input);
-
-            }
-        }
-        private void Time_Leave(object Sender, EventArgs E)
-        {
-            RichTextBox Control = (RichTextBox)Sender;
-            Controls.Remove(Control);
         }
 
         private void Options_Click(object Sender, EventArgs E)

@@ -11,10 +11,10 @@ namespace Recipsio
     {
         public static string Build_File_Formatted_Recipe(MainForm MF)
         {
-            return $":Name\n{MF.RecipeName.Text}\n" +
-                   $":Author\n{MF.RecipeAuthor.Text}\n" +
-                   $":PrepTime\n{MF.PrepHours.Text.Split(" ")[0]}:{MF.PrepMinutes.Text.Split(" ")[0]}:{MF.PrepDays.Text.Split(" ")[0]}\n" +
-                   $":CookTime\n{MF.CookDays.Text.Split(" ")[0]}:{MF.CookHours.Text.Split(" ")[0]}:{MF.CookMinutes.Text.Split(" ")[0]}\n" +
+            return $":Name\n{MF.Header.TotalTimeValue.Text}\n" +
+                   $":Author\n{MF.Header.TotalTimeValue.Text}\n" +
+                   $":PrepTime\n{MF.Header.TotalTimeValue.Text.Split(" ")[0]}:{MF.Header.TotalTimeValue.Text.Split(" ")[0]}:{MF.Header.TotalTimeValue.Text.Split(" ")[0]}\n" +
+                   $":CookTime\n{MF.Header.TotalTimeValue.Text.Split(" ")[0]}:{MF.Header.TotalTimeValue.Text.Split(" ")[0]}:{MF.Header.TotalTimeValue.Text.Split(" ")[0]}\n" +
                    $":Description\n{MF.RecipeDescription.Text}\n" +
                    $":Ingredients\n{string.Join("|", MF.RecipeIngredients.Items.Cast<string>())}\n" +
                    $":Directions\n{string.Join("|", MF.RecipeDirections.Items.Cast<string>())}";
@@ -36,29 +36,29 @@ namespace Recipsio
 
                 if (DataState == "Name")
                 {
-                    MF.RecipeName.Text = Lines[Index];
+                    MF.Header.TotalTimeValue.Text = Lines[Index];
                 }
                 else if (DataState == "Author")
                 {
-                    MF.RecipeAuthor.Text = Lines[Index];
+                    MF.Header.TotalTimeValue.Text = Lines[Index];
                 }
                 else if (DataState == "PrepTime")
                 {
                     string[] Times = Lines[Index].Split(":");
-                    MF.PrepHours.Text = $"{Times[0]} Days";
-                    MF.PrepMinutes.Text = $"{Times[1]} Hours";
-                    MF.PrepDays.Text = $"{Times[2]} Minutes";
+                    MF.Header.TotalTimeValue.Text = $"{Times[0]} Days";
+                    MF.Header.TotalTimeValue.Text = $"{Times[1]} Hours";
+                    MF.Header.TotalTimeValue.Text = $"{Times[2]} Minutes";
                 }
                 else if (DataState == "CookTime")
                 {
                     string[] Times = Lines[Index].Split(":");
-                    MF.CookDays.Text = $"{Times[0]} Days";
-                    MF.CookHours.Text = $"{Times[1]} Hours";
-                    MF.CookMinutes.Text = $"{Times[2]} Minutes";
+                    MF.Header.TotalTimeValue.Text = $"{Times[0]} Days";
+                    MF.Header.TotalTimeValue.Text = $"{Times[1]} Hours";
+                    MF.Header.TotalTimeValue.Text = $"{Times[2]} Minutes";
                 }
                 else if (DataState == "Description")
                 {
-                    MF.RecipeDescription.Text = Lines[Index];
+                    MF.Header.TotalTimeValue.Text = Lines[Index];
                 }
                 else if (DataState == "Ingredients")
                 {

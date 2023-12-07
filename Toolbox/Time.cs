@@ -48,10 +48,10 @@ namespace Recipsio
         }
         public void Update_Times()
         {
-            TimeSpan PrepTimeSpan = Update_TimeSpan(MF.PrepTimeLayout);
-            TimeSpan CookTimeSpan = Update_TimeSpan(MF.CookTimeLayout);
+            TimeSpan PrepTimeSpan = Update_TimeSpan(MF.Header.PrepTimeLayout);
+            TimeSpan CookTimeSpan = Update_TimeSpan(MF.Header.CookTimeLayout);
             TimeSpan TotalTimeSpan = PrepTimeSpan + CookTimeSpan;
-            MF.TotalTimeValue.Text = Format_Total_Time(TotalTimeSpan);
+            MF.Header.TotalTimeValue.Text = Format_Total_Time(TotalTimeSpan);
         }
         public string Format_Total_Time(TimeSpan TotalTimeSpan)
         {

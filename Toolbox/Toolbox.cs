@@ -14,7 +14,7 @@ namespace Recipsio
 
             foreach (Control C in PassedControl.Controls)
             {
-                if (!Exclusions.Contains(C.Name))
+                if (Exclusions is not null && !Exclusions.Contains(C.Name))
                 {
                     AllControls.Add(C);
                     if (C.HasChildren)

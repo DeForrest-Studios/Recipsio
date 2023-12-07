@@ -70,18 +70,19 @@
             FontSizeControl.Maximum = new decimal(new int[] { 13, 0, 0, 0 });
             FontSizeControl.Minimum = new decimal(new int[] { 5, 0, 0, 0 });
             FontSizeControl.Name = "FontSizeControl";
-            FontSizeControl.Size = new System.Drawing.Size(52, 23);
+            FontSizeControl.Size = new System.Drawing.Size(52, 21);
             FontSizeControl.TabIndex = 3;
             FontSizeControl.Value = new decimal(new int[] { 5, 0, 0, 0 });
             FontSizeControl.ValueChanged += Font_Size_Changed;
             // 
-            // ApplicationSettings
+            // EditorSettings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(252, 245, 229);
             Controls.Add(tableLayoutPanel1);
-            Name = "ApplicationSettings";
+            Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Name = "EditorSettings";
             Size = new System.Drawing.Size(503, 466);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
